@@ -57,7 +57,7 @@ def get_or_create_user(id: int, name: str, username: str = None, language: str =
 
 
 def get_admins() -> list[User]:
-    query = User.filter(User.id)
+    query = User.filter(User.is_admin)
     return list(query)
 
 
