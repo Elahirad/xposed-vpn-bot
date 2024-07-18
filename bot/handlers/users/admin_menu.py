@@ -2,12 +2,13 @@ import csv
 
 from aiogram.types import Message, InputFile
 
+from bot.states import UserStates
 from loader import dp, bot, config, _
 from services.users import count_users, get_users
 
 
-@dp.message_handler(i18n_text='Export users 📁', is_admin=True)
-@dp.message_handler(commands=['export_users'], is_admin=True)
+@dp.message_handler(i18n_text='Export users 📁', is_admin=True, state=UserStates.main_page)
+@dp.message_handler(commands=['export_users'], is_admin=True, state='*')
 async def _export_users(message: Message):
     count = count_users()
 
@@ -24,16 +25,16 @@ async def _export_users(message: Message):
     await message.answer_document(text_file, caption=_('Total users: {count}').format(count=count))
 
 
-@dp.message_handler(i18n_text='Count users 👥', is_admin=True)
-@dp.message_handler(commands=['count_users'], is_admin=True)
+@dp.message_handler(i18n_text='Count users 👥', is_admin=True, state=UserStates.main_page)
+@dp.message_handler(commands=['count_users'], is_admin=True, state='*')
 async def _users_count(message: Message):
     count = count_users()
 
     await message.answer(_('Total users: {count}').format(count=count))
 
 
-@dp.message_handler(i18n_text='Count active users 👥', is_admin=True)
-@dp.message_handler(commands=['count_active_users'], is_admin=True)
+@dp.message_handler(i18n_text='Count active users 👥', is_admin=True, state=UserStates.main_page)
+@dp.message_handler(commands=['count_active_users'], is_admin=True, state='*')
 async def _active_users_count(message: Message):
     users = get_users()
 

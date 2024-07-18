@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-18 20:03+0330\n"
+"POT-Creation-Date: 2024-07-19 02:35+0330\n"
 "PO-Revision-Date: 2022-03-24 14:03+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -47,11 +47,15 @@ msgstr "изменить язык"
 msgid "open bot settings"
 msgstr "открыть настройки бота"
 
-#: bot/handlers/users/admin_menu.py:24 bot/handlers/users/admin_menu.py:32
+#: bot/commands/default.py:12
+msgid "show user info"
+msgstr ""
+
+#: bot/handlers/users/admin_menu.py:25 bot/handlers/users/admin_menu.py:33
 msgid "Total users: {count}"
 msgstr "Всего пользователей: {count}"
 
-#: bot/handlers/users/admin_menu.py:48
+#: bot/handlers/users/admin_menu.py:49
 msgid "Active users: {count}"
 msgstr "Активных пользователей: {count}"
 
@@ -59,7 +63,84 @@ msgstr "Активных пользователей: {count}"
 msgid "Choose an action from the menu 👇"
 msgstr "Выберите действие в меню 👇"
 
-#: bot/handlers/users/settings.py:21
+#: bot/handlers/users/increase_balance.py:16
+#: bot/handlers/users/increase_balance.py:26
+msgid "Please enter the amount you want to increase"
+msgstr ""
+
+#: bot/handlers/users/increase_balance.py:29
+msgid ""
+"OK! Now send {amount} Tomans to below card number and send the receipt\n"
+"<pre>{card_number}</pre> "
+msgstr ""
+
+#: bot/handlers/users/increase_balance.py:45
+msgid "You receipt is received. Wait for approval process."
+msgstr ""
+
+#: bot/handlers/users/increase_balance.py:48
+msgid ""
+"Dear Admin !\n"
+"New receipt is arrived. Check your panel please."
+msgstr ""
+
+#: bot/handlers/users/increase_balance.py:58
+msgid "Please send the receipt image"
+msgstr ""
+
+#: bot/handlers/users/info.py:11
+msgid "Name"
+msgstr ""
+
+#: bot/handlers/users/info.py:11
+msgid "Username"
+msgstr ""
+
+#: bot/handlers/users/info.py:11
+msgid "Balance"
+msgstr ""
+
+#: bot/handlers/users/info.py:11
+msgid "Tomans"
+msgstr ""
+
+#: bot/handlers/users/manage_receipts.py:19
+msgid "There is no receipts!"
+msgstr ""
+
+#: bot/handlers/users/manage_receipts.py:24
+msgid ""
+"User: @{user}\n"
+"Amount: {amount} Tomans"
+msgstr ""
+
+#: bot/handlers/users/manage_receipts.py:42
+msgid "Your receipt has been approved!"
+msgstr ""
+
+#: bot/handlers/users/manage_receipts.py:43
+msgid "Receipt approved."
+msgstr ""
+
+#: bot/handlers/users/manage_receipts.py:46
+#: bot/handlers/users/manage_receipts.py:64
+msgid "Receipt not found."
+msgstr ""
+
+#: bot/handlers/users/manage_receipts.py:48
+#: bot/handlers/users/manage_receipts.py:66
+msgid "An error occurred."
+msgstr ""
+
+#: bot/handlers/users/manage_receipts.py:60
+msgid "Your receipt has been rejected!"
+msgstr ""
+
+#: bot/handlers/users/manage_receipts.py:61
+msgid "Receipt rejected."
+msgstr ""
+
+#: bot/handlers/users/settings.py:22
 msgid ""
 "Language changed successfully\n"
 "Press /help to find out how I can help you"
@@ -67,11 +148,11 @@ msgstr ""
 "Язык успешно изменен \n"
 "Нажми /help чтобы узнать чем я могу тебе помочь"
 
-#: bot/handlers/users/settings.py:30
+#: bot/handlers/users/settings.py:31
 msgid "Choose your language"
 msgstr "Выберите свой язык"
 
-#: bot/handlers/users/start.py:16
+#: bot/handlers/users/start.py:18
 msgid ""
 "Hi {full_name}!\n"
 "Choose your language"
@@ -79,7 +160,7 @@ msgstr ""
 "Привет, {full_name}!\n"
 "Выберите свой язык"
 
-#: bot/handlers/users/start.py:27 bot/keyboards/default/default.py:9
+#: bot/handlers/users/start.py:31 bot/keyboards/default/default.py:9
 msgid "Help 🆘"
 msgstr "Помощь 🆘"
 
@@ -87,19 +168,47 @@ msgstr "Помощь 🆘"
 msgid "Settings 🛠"
 msgstr "Настройки 🛠"
 
-#: bot/keyboards/default/default.py:12
+#: bot/keyboards/default/default.py:10
+msgid "My Information ℹ️"
+msgstr ""
+
+#: bot/keyboards/default/default.py:10
+msgid "Increase Balance💵"
+msgstr ""
+
+#: bot/keyboards/default/default.py:13
 msgid "Export users 📁"
 msgstr "Экспорт пользователей 📁"
 
-#: bot/keyboards/default/default.py:13
-msgid "Count users 👥"
-msgstr "Количество пользователей 👥"
-
 #: bot/keyboards/default/default.py:14
-msgid "Count active users 👥"
-msgstr "Количество активных пользователей 👥"
+msgid "Manage receipts 🧾"
+msgstr ""
+
+#: bot/keyboards/inline/receipt.py:9
+msgid "Approve ✅"
+msgstr ""
+
+#: bot/keyboards/inline/receipt.py:10
+msgid "Reject ❌"
+msgstr ""
 
 #: bot/middlewares/throttling.py:35
 msgid "Too many requests!"
 msgstr "Слишком много запросов!"
+
+#~ msgid ""
+#~ "OK! Now send {amount} Tomans to "
+#~ "below card number and send the "
+#~ "receipt\n"
+#~ "```{card_number}``` "
+#~ msgstr ""
+
+#~ msgid "Please enter the receipt image"
+#~ msgstr ""
+
+#~ msgid "Count users 👥"
+#~ msgstr "Количество пользователей 👥"
+
+#~ msgid "Count active users 👥"
+#~ msgstr "Количество активных пользователей 👥"
 

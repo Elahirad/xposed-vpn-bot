@@ -4,12 +4,13 @@ from aiogram.types import CallbackQuery, Message
 from bot.commands import set_admin_commands, set_user_commands
 from bot.keyboards.default import get_default_markup
 from bot.keyboards.inline import get_language_inline_markup
+from bot.states import UserStates
 from loader import dp, _, i18n
 from models import User
 from services.users import edit_user_language
 
 
-@dp.callback_query_handler(Regexp('^lang_(\w\w)$'))
+@dp.callback_query_handler(Regexp('^lang_(\w\w)$'), state='*')
 async def _change_language(callback_query: CallbackQuery, regexp: Regexp, user: User):
     language = regexp.group(1)
 
@@ -24,8 +25,8 @@ async def _change_language(callback_query: CallbackQuery, regexp: Regexp, user: 
     await callback_query.message.delete()
 
 
-@dp.message_handler(i18n_text='Settings 🛠')
-@dp.message_handler(commands=['lang', 'settings'])
+@dp.message_handler(i18n_text='Settings 🛠', state=UserStates.main_page)
+@dp.message_handler(commands=['lang', 'settings'], state='*')
 async def _settings(message: Message):
     text = _('Choose your language')
 

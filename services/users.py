@@ -54,3 +54,14 @@ def get_or_create_user(id: int, name: str, username: str = None, language: str =
         return user
 
     return create_user(id, name, username, language)
+
+
+def get_admins() -> list[User]:
+    query = User.filter(User.id)
+    return list(query)
+
+
+def increase_balance(user_id: int, amount: int):
+    query = User.get_or_none(User.id == user_id)
+    query.balance += amount
+    query.save()
