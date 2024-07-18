@@ -1,18 +1,18 @@
-# English translations for bot.
-# Copyright (C) 2022 ORGANIZATION
+# Persian translations for bot.
+# Copyright (C) 2024 ORGANIZATION
 # This file is distributed under the same license as the bot project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: bot VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2024-07-18 20:03+0330\n"
-"PO-Revision-Date: 2022-04-02 14:16+0300\n"
+"PO-Revision-Date: 2024-07-18 20:04+0330\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: en\n"
-"Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: fa\n"
+"Language-Team: fa <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,81 +20,85 @@ msgstr ""
 
 #: bot/commands/admin.py:11
 msgid "export users to csv"
-msgstr ""
+msgstr "استخراج کاربران به فایل csv"
 
 #: bot/commands/admin.py:12
 msgid "count users who contacted the bot"
-msgstr ""
+msgstr "شمارش کاربرانی که به ربات پیام داده‌اند"
 
 #: bot/commands/admin.py:13
 msgid "count active users (who didn't block the bot)"
-msgstr ""
+msgstr "شمارش کاربران فعال (که ربات را بلاک نکرده‌اند)"
 
 #: bot/commands/default.py:8
 msgid "start bot"
-msgstr ""
+msgstr "شروع ربات"
 
 #: bot/commands/default.py:9
 msgid "how it works?"
-msgstr ""
+msgstr "ربات چطور کار می‌کند؟"
 
 #: bot/commands/default.py:10
 msgid "change language"
-msgstr ""
+msgstr "تغییر زبان"
 
 #: bot/commands/default.py:11
 msgid "open bot settings"
-msgstr ""
+msgstr "باز کردن تنظیمات ربات"
 
 #: bot/handlers/users/admin_menu.py:24 bot/handlers/users/admin_menu.py:32
 msgid "Total users: {count}"
-msgstr ""
+msgstr "همه کاربران: {count}"
 
 #: bot/handlers/users/admin_menu.py:48
 msgid "Active users: {count}"
-msgstr ""
+msgstr "کاربران فعال: {count}"
 
 #: bot/handlers/users/helpers.py:10
 msgid "Choose an action from the menu 👇"
-msgstr ""
+msgstr "عملیاتی را از منوی پایین انتخاب کنید 👇"
 
 #: bot/handlers/users/settings.py:21
 msgid ""
 "Language changed successfully\n"
 "Press /help to find out how I can help you"
 msgstr ""
+"زبان با موفقیت تغییر کرد\n"
+"می‌توانید با زدن /help راهنمایی دریافت کنید"
 
 #: bot/handlers/users/settings.py:30
 msgid "Choose your language"
-msgstr ""
+msgstr "زبان خود را انتخاب کنید"
 
 #: bot/handlers/users/start.py:16
 msgid ""
 "Hi {full_name}!\n"
 "Choose your language"
 msgstr ""
+"سلام {full_name}!\n"
+"زبان خود را انتخاب کنید"
 
 #: bot/handlers/users/start.py:27 bot/keyboards/default/default.py:9
 msgid "Help 🆘"
-msgstr ""
+msgstr "راهنمایی 🆘"
 
 #: bot/keyboards/default/default.py:9
 msgid "Settings 🛠"
-msgstr ""
+msgstr "تنظیمات 🛠"
 
 #: bot/keyboards/default/default.py:12
 msgid "Export users 📁"
-msgstr ""
+msgstr "استخراج کاربران 📁"
 
 #: bot/keyboards/default/default.py:13
 msgid "Count users 👥"
-msgstr ""
+msgstr "شمارش کاربران 👥"
 
 #: bot/keyboards/default/default.py:14
 msgid "Count active users 👥"
-msgstr ""
+msgstr "شمارش کاربران فعال 👥"
 
 #: bot/middlewares/throttling.py:35
 msgid "Too many requests!"
-msgstr ""
+msgstr "تعداد درخواست بیش از حد!"
 

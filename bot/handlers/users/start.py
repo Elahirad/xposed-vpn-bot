@@ -26,6 +26,6 @@ async def _help(message: Message, user: User):
 
     text = _('Help 🆘') + '\n\n'
     for command in commands:
-        text += f'{command.command} - {command.description}\n'
+        text += f'{command.description} - {command.command}\n'
 
     await message.answer(text)

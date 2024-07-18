@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-04-02 14:54+0300\n"
+"POT-Creation-Date: 2024-07-18 20:03+0330\n"
 "PO-Revision-Date: 2022-03-24 14:03+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -47,11 +47,11 @@ msgstr "изменить язык"
 msgid "open bot settings"
 msgstr "открыть настройки бота"
 
-#: bot/handlers/users/admin_menu.py:25 bot/handlers/users/admin_menu.py:33
+#: bot/handlers/users/admin_menu.py:24 bot/handlers/users/admin_menu.py:32
 msgid "Total users: {count}"
 msgstr "Всего пользователей: {count}"
 
-#: bot/handlers/users/admin_menu.py:49
+#: bot/handlers/users/admin_menu.py:48
 msgid "Active users: {count}"
 msgstr "Активных пользователей: {count}"
 
@@ -71,7 +71,7 @@ msgstr ""
 msgid "Choose your language"
 msgstr "Выберите свой язык"
 
-#: bot/handlers/users/start.py:15
+#: bot/handlers/users/start.py:16
 msgid ""
 "Hi {full_name}!\n"
 "Choose your language"
@@ -79,7 +79,7 @@ msgstr ""
 "Привет, {full_name}!\n"
 "Выберите свой язык"
 
-#: bot/keyboards/default/default.py:9
+#: bot/handlers/users/start.py:27 bot/keyboards/default/default.py:9
 msgid "Help 🆘"
 msgstr "Помощь 🆘"
 
