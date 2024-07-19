@@ -7,7 +7,7 @@ from .user import User
 class Receipt(BaseModel):
     id = BigIntegerField(primary_key=True)
 
-    user = ForeignKeyField(User, backref='receipts')
+    user = ForeignKeyField(User, backref='receipts', on_delete='RESTRICT')
 
     amount = BigIntegerField()
 

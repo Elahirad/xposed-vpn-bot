@@ -12,6 +12,7 @@ def get_admin_commands(lang: str = 'en') -> list[BotCommand]:
         BotCommand('/manage_receipts', _('manage unresolved receipts')),
         BotCommand('/manage_admins', _('manage admins')),
         BotCommand('/manage_servers', _('manage servers')),
+        BotCommand('/manage_products', _('manage products')),
     ])
 
     return commands

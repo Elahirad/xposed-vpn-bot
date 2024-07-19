@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bot VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-19 12:02+0330\n"
+"POT-Creation-Date: 2024-07-19 12:26+0330\n"
 "PO-Revision-Date: 2024-07-18 20:04+0330\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fa\n"
@@ -23,9 +23,8 @@ msgid "export users to csv"
 msgstr "استخراج کاربران به فایل csv"
 
 #: bot/commands/admin.py:12
-#, fuzzy
 msgid "manage unresolved receipts"
-msgstr "مدیریت رسیدها 🧾"
+msgstr "مدیریت رسیدهای بررسی نشده"
 
 #: bot/commands/admin.py:13
 msgid "manage admins"
@@ -34,6 +33,10 @@ msgstr "مدیریت ادمین‌ها"
 #: bot/commands/admin.py:14
 msgid "manage servers"
 msgstr "مدیریت سرورها"
+
+#: bot/commands/admin.py:15
+msgid "manage products"
+msgstr "مدیریت محصولات"
 
 #: bot/commands/default.py:8
 msgid "start bot"
@@ -56,9 +59,8 @@ msgid "show user info"
 msgstr "نمایش اطلاعات کاربر"
 
 #: bot/commands/default.py:13
-#, fuzzy
 msgid "increase balance"
-msgstr "افزایش موجودی💵"
+msgstr "افزایش موجودی"
 
 #: bot/handlers/users/admin_menu.py:25 bot/handlers/users/admin_menu.py:33
 msgid "Total users: {count}"
@@ -127,6 +129,14 @@ msgstr "موجودی"
 #: bot/handlers/users/info.py:11
 msgid "Tomans"
 msgstr "تومان"
+
+#: bot/handlers/users/info.py:14
+msgid ""
+"\n"
+"ADMIN 😉😎"
+msgstr ""
+"\n"
+"ادمین 😉😎"
 
 #: bot/handlers/users/manage_admins.py:16
 #: bot/handlers/users/manage_admins.py:45
@@ -351,9 +361,8 @@ msgid "Your receipt has been rejected!"
 msgstr "رسید شما رد شد!"
 
 #: bot/handlers/users/manage_receipts.py:61
-#, fuzzy
 msgid "Receipt rejected."
-msgstr "رسید شما رد شد!"
+msgstr "رسید رد شد."
 
 #: bot/handlers/users/manage_servers.py:31 bot/keyboards/default/default.py:38
 msgid "Add Server ➕"

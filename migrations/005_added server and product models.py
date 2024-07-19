@@ -52,7 +52,7 @@ def migrate(migrator: Migrator, database: pw.Database, *, fake=False):
     class Product(pw.Model):
         id = pw.BigIntegerField(primary_key=True)
         name = pw.CharField(max_length=255, unique=True)
-        server = pw.ForeignKeyField(column_name='server_id', field='id', model=migrator.orm['servers'])
+        server = pw.ForeignKeyField(column_name='server_id', field='id', model=migrator.orm['servers'], on_delete='RESTRICT')
         days = pw.BigIntegerField()
         gb_limit = pw.BigIntegerField()
         price = pw.BigIntegerField()

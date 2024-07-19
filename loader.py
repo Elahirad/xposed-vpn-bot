@@ -23,7 +23,7 @@ if config.DB_USER and config.DB_PASSWORD and config.DB_HOST and config.DB_PORT a
     database = PostgresqlDatabase(config.DB_NAME, user=config.DB_USER, password=config.DB_PASSWORD,
                                   host=config.DB_HOST, port=config.DB_PORT)
 else:
-    database = SqliteDatabase(f'{config.DIR}/database.sqlite3')
+    database = SqliteDatabase(f'{config.DIR}/database.sqlite3', pragmas={'foreign_keys': 1})
 
 dp = Dispatcher(bot, storage=storage, run_tasks_by_default=True)
 

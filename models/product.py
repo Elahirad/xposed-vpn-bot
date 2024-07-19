@@ -9,7 +9,7 @@ class Product(BaseModel):
 
     name = CharField(unique=True)
 
-    server = ForeignKeyField(Server, backref='products')
+    server = ForeignKeyField(Server, backref='products', on_delete='RESTRICT')
 
     days = BigIntegerField()
 

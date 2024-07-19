@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bot VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-19 12:02+0330\n"
+"POT-Creation-Date: 2024-07-19 12:26+0330\n"
 "PO-Revision-Date: 2022-04-02 14:16+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -32,6 +32,10 @@ msgstr ""
 
 #: bot/commands/admin.py:14
 msgid "manage servers"
+msgstr ""
+
+#: bot/commands/admin.py:15
+msgid "manage products"
 msgstr ""
 
 #: bot/commands/default.py:8
@@ -118,6 +122,12 @@ msgstr ""
 
 #: bot/handlers/users/info.py:11
 msgid "Tomans"
+msgstr ""
+
+#: bot/handlers/users/info.py:14
+msgid ""
+"\n"
+"ADMIN 😉😎"
 msgstr ""
 
 #: bot/handlers/users/manage_admins.py:16
