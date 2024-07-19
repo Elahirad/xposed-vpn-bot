@@ -16,10 +16,12 @@ class UserStates(StatesGroup):
         get_name = State()
         get_url = State()
         get_proxy_path = State()
+        get_users_path = State()
         get_admin_uuid = State()
         edit_name = State()
         edit_url = State()
         edit_proxy_path = State()
+        edit_user_path = State()
         edit_admin_uuid = State()
 
     class ManageProducts(StatesGroup):

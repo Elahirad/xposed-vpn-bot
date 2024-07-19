@@ -12,6 +12,8 @@ class Server(BaseModel):
 
     proxy_path = CharField()
 
+    users_path = CharField()
+
     admin_uuid = CharField()
 
     class Meta:

@@ -20,7 +20,7 @@ async def _increase_balance(message: Message):
 
 @dp.message_handler(state=UserStates.IncreaseBalance.get_amount)
 async def _get_amount(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('You have successfully returned to the main menu.'),
                              reply_markup=get_default_markup(user))
         await UserStates.main_page.set()
@@ -60,7 +60,7 @@ async def _get_receipt(message: Message, state: FSMContext, user: User):
 @dp.message_handler(lambda message: message.content_type != types.ContentTypes.PHOTO,
                     state=UserStates.IncreaseBalance.get_receipt)
 async def _get_receipt(message: Message):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('Please enter the amount you want to increase'), reply_markup=get_back_markup())
         await UserStates.IncreaseBalance.get_amount.set()
         return

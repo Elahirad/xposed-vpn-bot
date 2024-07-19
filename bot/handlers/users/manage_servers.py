@@ -42,9 +42,11 @@ async def _handle_manage_servers(message: Message, user: User):
             return
 
         for server in servers:
-            text = _('Name: {name}\nURL: {url}\nProxy Path: {proxy_path}\nAdmin UUID: {admin_uuid}').format(
+            text = _(
+                'Name: {name}\nURL: {url}\nProxy Path: {proxy_path}\nUsers Path: {users_path}\nAdmin UUID: {admin_uuid}').format(
                 name=server.name, url=server.url,
                 proxy_path=server.proxy_path,
+                users_path=server.users_path,
                 admin_uuid=server.admin_uuid)
             await message.answer(text, reply_markup=get_server_inline_markup(server))
 
@@ -81,6 +83,18 @@ async def _get_proxy_path(message: Message, user: User, state: FSMContext):
         await UserStates.ManageServers.get_url.set()
         return
     await state.update_data(proxy_path=message.text)
+    await message.answer(_('OK! Now send the Users Path of the server.'), reply_markup=get_back_markup())
+    await UserStates.ManageServers.get_users_path.set()
+
+
+@dp.message_handler(state=UserStates.ManageServers.get_users_path, is_admin=True)
+async def _get_users_path(message: Message, user: User, state: FSMContext):
+    if message.text == _('Back 🔙'):
+        await message.answer(_('OK! Now send the Proxy Path of the server.'),
+                             reply_markup=get_back_markup())
+        await UserStates.ManageServers.get_proxy_path.set()
+        return
+    await state.update_data(users_path=message.text)
     await message.answer(_('OK! Now send the Admin UUID of the server.'), reply_markup=get_back_markup())
     await UserStates.ManageServers.get_admin_uuid.set()
 
@@ -88,13 +102,14 @@ async def _get_proxy_path(message: Message, user: User, state: FSMContext):
 @dp.message_handler(state=UserStates.ManageServers.get_admin_uuid, is_admin=True)
 async def _get_admin_uuid(message: Message, user: User, state: FSMContext):
     if message.text == _('Back 🔙'):
-        await message.answer(_('OK! Now send the Proxy Path of the server.'),
+        await message.answer(_('OK! Now send the Users Path of the server.'),
                              reply_markup=get_back_markup())
-        await UserStates.ManageServers.get_proxy_path.set()
+        await UserStates.ManageServers.get_users_path.set()
         return
     state_data = await state.get_data()
     try:
-        add_server(state_data['name'], state_data['url'], state_data['proxy_path'], message.text)
+        add_server(state_data['name'], state_data['url'], state_data['proxy_path'], state_data['users_path'],
+                   message.text)
         await message.answer(_('Server added.'), reply_markup=get_manage_servers_markup())
         await UserStates.ManageServers.main.set()
     except Exception as e:

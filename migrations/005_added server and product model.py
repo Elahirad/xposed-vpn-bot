@@ -1,4 +1,4 @@
-"""Peewee migrations -- 005_added server and product models.py.
+"""Peewee migrations -- 005_added server and product model.py.
 
 Some examples (model - class or model name)::
 
@@ -37,12 +37,20 @@ with suppress(ImportError):
 def migrate(migrator: Migrator, database: pw.Database, *, fake=False):
     """Write your migrations here."""
     
+    migrator.add_fields(
+        'services',
+
+        uuid=pw.CharField(default='', max_length=255))
+
+    migrator.remove_fields('services', 'link')
+
     @migrator.create_model
     class Server(pw.Model):
         id = pw.BigIntegerField(primary_key=True)
         name = pw.CharField(max_length=255, unique=True)
         url = pw.CharField(max_length=255, unique=True)
         proxy_path = pw.CharField(max_length=255)
+        users_path = pw.CharField(max_length=255)
         admin_uuid = pw.CharField(max_length=255)
 
         class Meta:
@@ -64,6 +72,13 @@ def migrate(migrator: Migrator, database: pw.Database, *, fake=False):
 def rollback(migrator: Migrator, database: pw.Database, *, fake=False):
     """Write your rollback migrations here."""
     
+    migrator.add_fields(
+        'services',
+
+        link=pw.CharField(max_length=255))
+
+    migrator.remove_fields('services', 'uuid')
+
     migrator.remove_model('servers')
 
     migrator.remove_model('products')

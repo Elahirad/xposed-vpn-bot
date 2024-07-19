@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bot VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-19 12:26+0330\n"
+"POT-Creation-Date: 2024-07-19 15:34+0330\n"
 "PO-Revision-Date: 2022-04-02 14:16+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -80,6 +80,36 @@ msgstr ""
 msgid "Please enter the amount you want to increase"
 msgstr ""
 
+#: bot/handlers/users/increase_balance.py:23
+#: bot/handlers/users/increase_balance.py:63
+#: bot/handlers/users/manage_admins.py:23
+#: bot/handlers/users/manage_admins.py:44
+#: bot/handlers/users/manage_prodcuts.py:25
+#: bot/handlers/users/manage_prodcuts.py:51
+#: bot/handlers/users/manage_prodcuts.py:63
+#: bot/handlers/users/manage_prodcuts.py:75
+#: bot/handlers/users/manage_prodcuts.py:87
+#: bot/handlers/users/manage_prodcuts.py:99
+#: bot/handlers/users/manage_prodcuts.py:136
+#: bot/handlers/users/manage_prodcuts.py:164
+#: bot/handlers/users/manage_prodcuts.py:191
+#: bot/handlers/users/manage_prodcuts.py:218
+#: bot/handlers/users/manage_prodcuts.py:245
+#: bot/handlers/users/manage_servers.py:26
+#: bot/handlers/users/manage_servers.py:56
+#: bot/handlers/users/manage_servers.py:68
+#: bot/handlers/users/manage_servers.py:80
+#: bot/handlers/users/manage_servers.py:92
+#: bot/handlers/users/manage_servers.py:104
+#: bot/handlers/users/manage_servers.py:142
+#: bot/handlers/users/manage_servers.py:168
+#: bot/handlers/users/manage_servers.py:194
+#: bot/handlers/users/manage_servers.py:220 bot/keyboards/default/default.py:30
+#: bot/keyboards/default/default.py:39 bot/keyboards/default/default.py:48
+#: bot/keyboards/default/default.py:56 bot/keyboards/default/default.py:66
+msgid "Back 🔙"
+msgstr ""
+
 #: bot/handlers/users/increase_balance.py:24
 #: bot/handlers/users/manage_admins.py:24
 #: bot/handlers/users/manage_prodcuts.py:26
@@ -140,39 +170,12 @@ msgstr ""
 #: bot/handlers/users/manage_prodcuts.py:219
 #: bot/handlers/users/manage_prodcuts.py:246
 #: bot/handlers/users/manage_servers.py:19
-#: bot/handlers/users/manage_servers.py:55
-#: bot/handlers/users/manage_servers.py:128
-#: bot/handlers/users/manage_servers.py:154
-#: bot/handlers/users/manage_servers.py:180
-#: bot/handlers/users/manage_servers.py:206
+#: bot/handlers/users/manage_servers.py:57
+#: bot/handlers/users/manage_servers.py:143
+#: bot/handlers/users/manage_servers.py:169
+#: bot/handlers/users/manage_servers.py:195
+#: bot/handlers/users/manage_servers.py:221
 msgid "Ok! What do you want to do ?"
-msgstr ""
-
-#: bot/handlers/users/manage_admins.py:23
-#: bot/handlers/users/manage_admins.py:44
-#: bot/handlers/users/manage_prodcuts.py:25
-#: bot/handlers/users/manage_prodcuts.py:51
-#: bot/handlers/users/manage_prodcuts.py:63
-#: bot/handlers/users/manage_prodcuts.py:75
-#: bot/handlers/users/manage_prodcuts.py:87
-#: bot/handlers/users/manage_prodcuts.py:99
-#: bot/handlers/users/manage_prodcuts.py:136
-#: bot/handlers/users/manage_prodcuts.py:164
-#: bot/handlers/users/manage_prodcuts.py:191
-#: bot/handlers/users/manage_prodcuts.py:218
-#: bot/handlers/users/manage_prodcuts.py:245
-#: bot/handlers/users/manage_servers.py:26
-#: bot/handlers/users/manage_servers.py:54
-#: bot/handlers/users/manage_servers.py:66
-#: bot/handlers/users/manage_servers.py:78
-#: bot/handlers/users/manage_servers.py:90
-#: bot/handlers/users/manage_servers.py:127
-#: bot/handlers/users/manage_servers.py:153
-#: bot/handlers/users/manage_servers.py:179
-#: bot/handlers/users/manage_servers.py:205 bot/keyboards/default/default.py:30
-#: bot/keyboards/default/default.py:39 bot/keyboards/default/default.py:48
-#: bot/keyboards/default/default.py:56 bot/keyboards/default/default.py:66
-msgid "Back 🔙"
 msgstr ""
 
 #: bot/handlers/users/manage_admins.py:28 bot/keyboards/default/default.py:29
@@ -217,12 +220,12 @@ msgstr ""
 #: bot/handlers/users/manage_prodcuts.py:257
 #: bot/handlers/users/manage_receipts.py:48
 #: bot/handlers/users/manage_receipts.py:66
-#: bot/handlers/users/manage_servers.py:102
-#: bot/handlers/users/manage_servers.py:113
-#: bot/handlers/users/manage_servers.py:139
-#: bot/handlers/users/manage_servers.py:165
-#: bot/handlers/users/manage_servers.py:191
-#: bot/handlers/users/manage_servers.py:217
+#: bot/handlers/users/manage_servers.py:117
+#: bot/handlers/users/manage_servers.py:128
+#: bot/handlers/users/manage_servers.py:154
+#: bot/handlers/users/manage_servers.py:180
+#: bot/handlers/users/manage_servers.py:206
+#: bot/handlers/users/manage_servers.py:232
 msgid "An error occurred."
 msgstr ""
 
@@ -347,7 +350,7 @@ msgid "Add Server ➕"
 msgstr ""
 
 #: bot/handlers/users/manage_servers.py:33
-#: bot/handlers/users/manage_servers.py:67
+#: bot/handlers/users/manage_servers.py:69
 msgid "OK! Now send the Name of the server."
 msgstr ""
 
@@ -364,48 +367,54 @@ msgid ""
 "Name: {name}\n"
 "URL: {url}\n"
 "Proxy Path: {proxy_path}\n"
+"Users Path: {users_path}\n"
 "Admin UUID: {admin_uuid}"
 msgstr ""
 
-#: bot/handlers/users/manage_servers.py:60
-#: bot/handlers/users/manage_servers.py:79
+#: bot/handlers/users/manage_servers.py:62
+#: bot/handlers/users/manage_servers.py:81
 msgid "OK! Now send the URL of the server."
 msgstr ""
 
-#: bot/handlers/users/manage_servers.py:72
-#: bot/handlers/users/manage_servers.py:91
+#: bot/handlers/users/manage_servers.py:74
+#: bot/handlers/users/manage_servers.py:93
 msgid "OK! Now send the Proxy Path of the server."
 msgstr ""
 
-#: bot/handlers/users/manage_servers.py:84
-msgid "OK! Now send the Admin UUID of the server."
+#: bot/handlers/users/manage_servers.py:86
+#: bot/handlers/users/manage_servers.py:105
+msgid "OK! Now send the Users Path of the server."
 msgstr ""
 
 #: bot/handlers/users/manage_servers.py:98
+msgid "OK! Now send the Admin UUID of the server."
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:113
 msgid "Server added."
 msgstr ""
 
-#: bot/handlers/users/manage_servers.py:110
+#: bot/handlers/users/manage_servers.py:125
 msgid "Server removed."
 msgstr ""
 
-#: bot/handlers/users/manage_servers.py:121
-#: bot/handlers/users/manage_servers.py:147
+#: bot/handlers/users/manage_servers.py:136
+#: bot/handlers/users/manage_servers.py:162
 msgid "OK! Send the new URL for this server."
 msgstr ""
 
-#: bot/handlers/users/manage_servers.py:135
-#: bot/handlers/users/manage_servers.py:161
-#: bot/handlers/users/manage_servers.py:187
-#: bot/handlers/users/manage_servers.py:213
+#: bot/handlers/users/manage_servers.py:150
+#: bot/handlers/users/manage_servers.py:176
+#: bot/handlers/users/manage_servers.py:202
+#: bot/handlers/users/manage_servers.py:228
 msgid "Server updated."
 msgstr ""
 
-#: bot/handlers/users/manage_servers.py:173
+#: bot/handlers/users/manage_servers.py:188
 msgid "OK! Send the new Proxy Path for this server."
 msgstr ""
 
-#: bot/handlers/users/manage_servers.py:199
+#: bot/handlers/users/manage_servers.py:214
 msgid "OK! Send the new Admin UUID for this server."
 msgstr ""
 
@@ -547,5 +556,12 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "count active users (who didn't block the bot)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Name: {name}\n"
+#~ "URL: {url}\n"
+#~ "Proxy Path: {proxy_path}\n"
+#~ "Admin UUID: {admin_uuid}"
 #~ msgstr ""
 

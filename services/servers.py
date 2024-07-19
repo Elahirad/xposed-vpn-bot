@@ -8,8 +8,9 @@ def get_servers() -> Optional[list[Server]]:
     return list(query)
 
 
-def add_server(name: str, url: str, proxy_path: str, admin_uuid: str) -> Server:
-    server = Server.create(name=name, url=url, proxy_path=proxy_path, admin_uuid=admin_uuid)
+def add_server(name: str, url: str, proxy_path: str, users_path: str, admin_uuid: str) -> Server:
+    print("HEre")
+    server = Server.create(name=name, url=url, proxy_path=proxy_path, users_path=users_path, admin_uuid=admin_uuid)
     return server
 
 

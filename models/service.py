@@ -9,7 +9,7 @@ class Service(BaseModel):
 
     user = ForeignKeyField(User, backref='services', on_delete='RESTRICT')
 
-    link = CharField(null=False)
+    uuid = CharField(default='')
 
     class Meta:
         table_name = 'services'
