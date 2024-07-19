@@ -4,6 +4,7 @@ from .admin_menu import dp
 from .info import dp
 from .increase_balance import dp
 from .manage_receipts import dp
+from .manage_admins import dp
 from .web_app_test import dp
 
 from .helpers import dp

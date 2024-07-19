@@ -10,9 +10,9 @@ from services.receipt import get_unresolved_receipts, get_receipt_by_id
 from services.users import increase_balance
 
 
-@dp.message_handler(i18n_text='Manage receipts 🧾', state=UserStates.main_page)
-@dp.message_handler(commands=['manage_receipts'], state='*')
-async def _export_users(message: Message):
+@dp.message_handler(i18n_text='Manage receipts 🧾', state=UserStates.main_page, is_admin=True)
+@dp.message_handler(commands=['manage_receipts'], state='*', is_admin=True)
+async def _manage_receipts(message: Message):
     receipts = get_unresolved_receipts()
 
     if not len(receipts):
@@ -27,7 +27,7 @@ async def _export_users(message: Message):
                                    reply_markup=markup)
 
 
-@dp.callback_query_handler(Regexp(r'^receipt_approve_(\d+)$'), state='*')
+@dp.callback_query_handler(Regexp(r'^receipt_approve_(\d+)$'), state='*', is_admin=True)
 async def approve_receipt(callback_query: types.CallbackQuery, regexp: Regexp):
     receipt_id = int(regexp.group(1))
     try:
@@ -48,7 +48,7 @@ async def approve_receipt(callback_query: types.CallbackQuery, regexp: Regexp):
         await callback_query.answer(_("An error occurred."))
 
 
-@dp.callback_query_handler(Regexp(r'^receipt_reject_(\d+)$'), state='*')
+@dp.callback_query_handler(Regexp(r'^receipt_reject_(\d+)$'), state='*', is_admin=True)
 async def reject_receipt(callback_query: types.CallbackQuery, regexp: Regexp):
     receipt_id = int(regexp.group(1))
     try:

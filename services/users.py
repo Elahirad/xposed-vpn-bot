@@ -1,3 +1,5 @@
+from typing import Optional
+
 from peewee import fn
 
 from data.config import ADMINS
@@ -65,3 +67,27 @@ def increase_balance(user_id: int, amount: int):
     query = User.get_or_none(User.id == user_id)
     query.balance += amount
     query.save()
+
+
+def find_user(id_or_username: str) -> Optional[User]:
+    try:
+        int_id = int(id_or_username)
+        query = User.get_or_none(User.id == int_id)
+        if query:
+            return query
+    except:
+        query = User.get_or_none(User.username == id_or_username)
+        if query:
+            return query
+
+    return None
+
+
+def make_admin(user: User) -> None:
+    user.is_admin = True
+    user.save()
+
+
+def remove_admin(user: User) -> None:
+    user.is_admin = False
+    user.save()

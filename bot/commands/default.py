@@ -10,6 +10,7 @@ def get_default_commands(lang: str = 'en') -> list[BotCommand]:
         BotCommand('/lang', _('change language', locale=lang)),
         BotCommand('/settings', _('open bot settings', locale=lang)),
         BotCommand('/user_info', _('show user info', locale=lang)),
+        BotCommand('/increase_balance', _('increase balance', locale=lang)),
     ]
 
     return commands

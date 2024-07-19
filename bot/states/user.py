@@ -7,3 +7,6 @@ class UserStates(StatesGroup):
     class IncreaseBalance(StatesGroup):
         get_amount = State()
         get_receipt = State()
+
+    manage_admins = State()
+    add_admin = State()
