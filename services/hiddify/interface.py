@@ -45,10 +45,8 @@ class HiddifyInterface:
         response = requests.get(self._complete_url + '/api/v2/admin/user/', headers=self._headers)
         return json.loads(response.text)
 
-    def prolong_service(self, uuid: str, days: int, limit: int):
+    def prolong_service(self, uuid: str):
         payload = {
-            "package_days": days,
-            "usage_limit_GB": limit,
             "current_usage_GB": 0,
             "start_date": datetime.date.today().strftime("%Y-%m-%d"),
         }

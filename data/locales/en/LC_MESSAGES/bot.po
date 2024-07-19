@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bot VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-19 17:06+0330\n"
+"POT-Creation-Date: 2024-07-20 00:31+0330\n"
 "PO-Revision-Date: 2022-04-02 14:16+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -101,7 +101,9 @@ msgstr ""
 #: bot/handlers/users/manage_servers.py:168
 #: bot/handlers/users/manage_servers.py:194
 #: bot/handlers/users/manage_servers.py:220
-#: bot/handlers/users/manage_servers.py:246 bot/keyboards/default/default.py:32
+#: bot/handlers/users/manage_servers.py:246
+#: bot/handlers/users/my_services.py:49 bot/handlers/users/my_services.py:76
+#: bot/handlers/users/my_services.py:87 bot/keyboards/default/default.py:32
 #: bot/keyboards/default/default.py:41 bot/keyboards/default/default.py:50
 #: bot/keyboards/default/default.py:59 bot/keyboards/default/default.py:67
 #: bot/keyboards/default/default.py:77 bot/keyboards/default/default.py:87
@@ -112,7 +114,8 @@ msgstr ""
 #: bot/handlers/users/increase_balance.py:24
 #: bot/handlers/users/manage_admins.py:24
 #: bot/handlers/users/manage_prodcuts.py:26
-#: bot/handlers/users/manage_servers.py:27
+#: bot/handlers/users/manage_servers.py:27 bot/handlers/users/my_services.py:50
+#: bot/handlers/users/my_services.py:77 bot/handlers/users/my_services.py:88
 msgid "You have successfully returned to the main menu."
 msgstr ""
 
@@ -131,7 +134,9 @@ msgid ""
 "Press Confirm ✅ Button to finalize the order."
 msgstr ""
 
-#: bot/handlers/users/buy_service.py:62 bot/keyboards/default/default.py:58
+#: bot/handlers/users/buy_service.py:62 bot/handlers/users/my_services.py:54
+#: bot/handlers/users/my_services.py:81 bot/handlers/users/my_services.py:92
+#: bot/keyboards/default/default.py:58
 msgid "Confirm ✅"
 msgstr ""
 
@@ -466,6 +471,45 @@ msgstr ""
 msgid "OK! Send the new Admin UUID for this server."
 msgstr ""
 
+#: bot/handlers/users/my_services.py:24
+msgid "You have no servers."
+msgstr ""
+
+#: bot/handlers/users/my_services.py:30
+msgid ""
+"Name: {name}\n"
+"Days remaining: {days}\n"
+"Usage(GB): {usage}\n"
+"Limit: {limit}"
+msgstr ""
+
+#: bot/handlers/users/my_services.py:43
+msgid ""
+"By prolonging your remaining days and usage will be reset.\n"
+"Press Confirm✅ to finalize prolonging"
+msgstr ""
+
+#: bot/handlers/users/my_services.py:61
+msgid "Service prolong success."
+msgstr ""
+
+#: bot/handlers/users/my_services.py:71
+msgid ""
+"By deleting a service you will lose all of your remaining days and "
+"traffic.\n"
+"Press Confirm✅ to finalize deleting"
+msgstr ""
+
+#: bot/handlers/users/my_services.py:82
+msgid ""
+"By deleting a service your paid balance will not be refunded.\n"
+"Press Confirm✅ to finalize deleting"
+msgstr ""
+
+#: bot/handlers/users/my_services.py:99
+msgid "Service deletion success."
+msgstr ""
+
 #: bot/handlers/users/settings.py:22
 msgid ""
 "Language changed successfully\n"
@@ -551,6 +595,7 @@ msgid "Edit Price ✏️"
 msgstr ""
 
 #: bot/keyboards/inline/product.py:14 bot/keyboards/inline/server.py:14
+#: bot/keyboards/inline/service.py:10
 msgid "Delete 🗑️"
 msgstr ""
 
@@ -576,6 +621,10 @@ msgstr ""
 
 #: bot/keyboards/inline/server.py:13
 msgid "Edit Admin UUID ✏️"
+msgstr ""
+
+#: bot/keyboards/inline/service.py:9
+msgid "Prolong 🕐"
 msgstr ""
 
 #: bot/middlewares/throttling.py:35
@@ -633,5 +682,12 @@ msgstr ""
 #~ "Limit(GB): {limit}\n"
 #~ "Price: {price}\n"
 #~ "Press Confirm ✅ Button to finalize the order."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "By deleting a service you will "
+#~ "lose all of your remaingin days "
+#~ "and traffic.\n"
+#~ "Press Confirm✅ to finalize deleting"
 #~ msgstr ""
 

@@ -41,3 +41,8 @@ class UserStates(StatesGroup):
         edit_days = State()
         edit_gb_limit = State()
         edit_price = State()
+
+    class MyServices(StatesGroup):
+        prolong_confirm = State()
+        remove_confirm = State()
+        remove_second_confirm = State()
