@@ -11,6 +11,7 @@ def get_admin_commands(lang: str = 'en') -> list[BotCommand]:
         BotCommand('/export_users', _('export users to csv', locale=lang)),
         BotCommand('/manage_receipts', _('manage unresolved receipts')),
         BotCommand('/manage_admins', _('manage admins')),
+        BotCommand('/manage_servers', _('manage servers')),
     ])
 
     return commands

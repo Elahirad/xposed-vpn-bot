@@ -1,10 +1,11 @@
 from aiogram.types import ReplyKeyboardMarkup, ReplyKeyboardRemove
 
 from loader import _
+from services.servers import get_servers
 
 
 def get_default_markup(user):
-    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
+    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=5)
 
     markup.add(_('Help 🆘'), _('Settings 🛠'))
     markup.add(_('My Information ℹ️'), _('Increase Balance💵'))
@@ -13,6 +14,8 @@ def get_default_markup(user):
         markup.add(_('Export users 📁'))
         markup.add(_('Manage receipts 🧾'))
         markup.add(_('Manage Admins ⚙️'))
+        markup.add(_('Manage Servers 🖥️'))
+        markup.add(_('Manage Products 🛍️'))
 
     if len(markup.keyboard) < 1:
         return ReplyKeyboardRemove()
@@ -21,7 +24,7 @@ def get_default_markup(user):
 
 
 def get_manage_admins_markup():
-    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
+    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=5)
 
     markup.add(_('Add Admin ➕'), _('Show and Delete Admins ❌'))
     markup.add(_('Back 🔙'))
@@ -29,9 +32,37 @@ def get_manage_admins_markup():
     return markup
 
 
-def get_back_markup():
-    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
+def get_manage_servers_markup():
+    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=5)
 
+    markup.add(_('Add Server ➕'), _('Edit Servers ✏️'))
+    markup.add(_('Back 🔙'))
+
+    return markup
+
+
+def get_manage_products_markup():
+    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=5)
+
+    markup.add(_('Add Product ➕'), _('Edit Products ✏️'))
+    markup.add(_('Back 🔙'))
+
+    return markup
+
+
+def get_back_markup():
+    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=5)
+
+    markup.add(_('Back 🔙'))
+
+    return markup
+
+
+def get_servers_markup():
+    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=5)
+
+    for server in get_servers():
+        markup.add(server.name)
     markup.add(_('Back 🔙'))
 
     return markup
