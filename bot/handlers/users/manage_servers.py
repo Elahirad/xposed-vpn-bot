@@ -10,7 +10,7 @@ from loader import dp, _, bot
 from models import User
 from services.servers import get_servers, add_server, delete_server, update_server_name, update_server_url, \
     update_server_admin_uuid, \
-    update_server_proxy_path
+    update_server_proxy_path, update_server_users_path
 
 
 @dp.message_handler(i18n_text='Manage Servers 🖥️', state=UserStates.main_page, is_admin=True)
@@ -199,6 +199,32 @@ async def _update_proxy_path(message: Message, user: User, state: FSMContext):
     state_data = await state.get_data()
     try:
         update_server_proxy_path(state_data['server_id'], message.text)
+        await message.answer(_('Server updated.'), reply_markup=get_manage_servers_markup())
+        await UserStates.ManageServers.main.set()
+    except Exception as e:
+        print(e)
+        await message.answer(_('An error occurred.'))
+
+
+@dp.callback_query_handler(Regexp(r'^server_edit_users_path_(\d+)$'), state='*', is_admin=True)
+async def _update_server_users_path(callback_query: types.CallbackQuery, regexp: Regexp, state: FSMContext, user: User):
+    server_id = int(regexp.group(1))
+    await state.update_data(server_id=server_id)
+
+    await bot.send_message(chat_id=user.id, text=_("OK! Send the new Users Path for this server."))
+    await UserStates.ManageServers.edit_user_path.set()
+
+
+@dp.message_handler(state=UserStates.ManageServers.edit_user_path, is_admin=True)
+async def _update_users_path(message: Message, user: User, state: FSMContext):
+    if message.text == _('Back 🔙'):
+        await message.answer(_('Ok! What do you want to do ?'),
+                             reply_markup=get_manage_servers_markup())
+        await UserStates.ManageServers.main.set()
+        return
+    state_data = await state.get_data()
+    try:
+        update_server_users_path(state_data['server_id'], message.text)
         await message.answer(_('Server updated.'), reply_markup=get_manage_servers_markup())
         await UserStates.ManageServers.main.set()
     except Exception as e:

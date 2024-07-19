@@ -8,6 +8,11 @@ class UserStates(StatesGroup):
         get_amount = State()
         get_receipt = State()
 
+    class BuyService(StatesGroup):
+        choose_product = State()
+        choose_name = State()
+        confirm = State()
+
     manage_admins = State()
     add_admin = State()
 

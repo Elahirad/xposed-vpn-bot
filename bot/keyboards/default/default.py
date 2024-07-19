@@ -1,6 +1,7 @@
 from aiogram.types import ReplyKeyboardMarkup, ReplyKeyboardRemove
 
 from loader import _
+from services.products import get_products
 from services.servers import get_servers
 
 
@@ -9,6 +10,7 @@ def get_default_markup(user):
 
     markup.add(_('Help 🆘'), _('Settings 🛠'))
     markup.add(_('My Information ℹ️'), _('Increase Balance💵'))
+    markup.add(_('Buy a Service 🛒'), _('My Services 📜'))
 
     if user.is_admin:
         markup.add(_('Export users 📁'))
@@ -50,6 +52,15 @@ def get_manage_products_markup():
     return markup
 
 
+def get_order_confirm_markup():
+    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=5)
+
+    markup.add(_('Confirm ✅'))
+    markup.add(_('Back 🔙'))
+
+    return markup
+
+
 def get_back_markup():
     markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=5)
 
@@ -63,6 +74,16 @@ def get_servers_markup():
 
     for server in get_servers():
         markup.add(server.name)
+    markup.add(_('Back 🔙'))
+
+    return markup
+
+
+def get_products_markup():
+    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=5)
+
+    for product in get_products():
+        markup.add(product.name)
     markup.add(_('Back 🔙'))
 
     return markup

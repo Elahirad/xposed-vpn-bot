@@ -30,5 +30,9 @@ def update_server_proxy_path(server_id: int, proxy_path: str) -> None:
     Server.update({Server.proxy_path: proxy_path}).where(Server.id == server_id).execute()
 
 
+def update_server_users_path(server_id: int, users_path: str) -> None:
+    Server.update({Server.users_path: users_path}).where(Server.id == server_id).execute()
+
+
 def update_server_admin_uuid(server_id: int, admin_uuid: str) -> None:
     Server.update({Server.admin_uuid: admin_uuid}).where(Server.id == server_id).execute()

@@ -3,6 +3,7 @@ from .settings import dp
 from .admin_menu import dp
 from .manage_servers import dp
 from .manage_prodcuts import dp
+from .buy_service import dp
 from .info import dp
 from .increase_balance import dp
 from .manage_receipts import dp

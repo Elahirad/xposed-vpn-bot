@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bot VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-19 15:34+0330\n"
+"POT-Creation-Date: 2024-07-19 17:06+0330\n"
 "PO-Revision-Date: 2024-07-18 20:04+0330\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fa\n"
@@ -70,16 +70,12 @@ msgstr "همه کاربران: {count}"
 msgid "Active users: {count}"
 msgstr "کاربران فعال: {count}"
 
-#: bot/handlers/users/helpers.py:10
-msgid "Choose an action from the menu 👇"
-msgstr "عملیاتی را از منوی پایین انتخاب کنید 👇"
+#: bot/handlers/users/buy_service.py:18 bot/handlers/users/buy_service.py:39
+msgid "Please select the product you want."
+msgstr "لطفا محصول مورد نظر را انتخاب فرمایید."
 
-#: bot/handlers/users/increase_balance.py:16
-#: bot/handlers/users/increase_balance.py:31
-#: bot/handlers/users/increase_balance.py:64
-msgid "Please enter the amount you want to increase"
-msgstr "لطفا مقداری که می‌خواهید به موجودی اضافه کنید را وارد نمایید"
-
+#: bot/handlers/users/buy_service.py:25 bot/handlers/users/buy_service.py:38
+#: bot/handlers/users/buy_service.py:56
 #: bot/handlers/users/increase_balance.py:23
 #: bot/handlers/users/increase_balance.py:63
 #: bot/handlers/users/manage_admins.py:23
@@ -104,18 +100,75 @@ msgstr "لطفا مقداری که می‌خواهید به موجودی اضا�
 #: bot/handlers/users/manage_servers.py:142
 #: bot/handlers/users/manage_servers.py:168
 #: bot/handlers/users/manage_servers.py:194
-#: bot/handlers/users/manage_servers.py:220 bot/keyboards/default/default.py:30
-#: bot/keyboards/default/default.py:39 bot/keyboards/default/default.py:48
-#: bot/keyboards/default/default.py:56 bot/keyboards/default/default.py:66
+#: bot/handlers/users/manage_servers.py:220
+#: bot/handlers/users/manage_servers.py:246 bot/keyboards/default/default.py:32
+#: bot/keyboards/default/default.py:41 bot/keyboards/default/default.py:50
+#: bot/keyboards/default/default.py:59 bot/keyboards/default/default.py:67
+#: bot/keyboards/default/default.py:77 bot/keyboards/default/default.py:87
 msgid "Back 🔙"
 msgstr "بازگشت 🔙"
 
+#: bot/handlers/users/buy_service.py:26
 #: bot/handlers/users/increase_balance.py:24
 #: bot/handlers/users/manage_admins.py:24
 #: bot/handlers/users/manage_prodcuts.py:26
 #: bot/handlers/users/manage_servers.py:27
 msgid "You have successfully returned to the main menu."
 msgstr "با موفقیت به منوی اصلی بازگشتید."
+
+#: bot/handlers/users/buy_service.py:32 bot/handlers/users/buy_service.py:57
+msgid "OK! Now please choose a name for your service."
+msgstr "خب! حالا یک نام برای سرویس خود انتخاب کنید."
+
+#: bot/handlers/users/buy_service.py:47
+msgid ""
+"OK! {product_name} Selected.\n"
+"Here is details of the product:\n"
+"Name: {name}\n"
+"Days: {days}\n"
+"Limit(GB): {limit}\n"
+"Price: {price}\n"
+"Press Confirm ✅ Button to finalize the order."
+msgstr ""
+"خب! {product_name} انتخاب شد.\n"
+"جزئیات سرویس به شرح زیر است:\n"
+"نام: {name}\n"
+"تعداد روز: {days}\n"
+"حجم (گیگابایت): {limit}\n"
+"قیمت: {price} تومان\n"
+"دکمه تایید ✅ را جهت نهایی‌سازی سفارش بزنید."
+
+#: bot/handlers/users/buy_service.py:62 bot/keyboards/default/default.py:58
+msgid "Confirm ✅"
+msgstr "تایید ✅"
+
+#: bot/handlers/users/buy_service.py:69
+msgid ""
+"Dear user. Your balance is insufficient for purchasing this service.\n"
+"Please charge your account and try again"
+msgstr ""
+"کاربر عزیز. موجودی حساب شما برای خریداری این سرویس کافی نیست.\n"
+"لطفا حساب خود را شارژ نموده و مجددا تلاش فرمایید"
+
+#: bot/handlers/users/buy_service.py:79
+msgid ""
+"Purchased successfully!\n"
+"Your subscription link is:\n"
+"{link}"
+msgstr ""
+"خرید با موفقیت انجام شد!\n"
+"لینک اشتراک شما:\n"
+"{link}"
+
+#: bot/handlers/users/helpers.py:10
+msgid "Choose an action from the menu 👇"
+msgstr "عملیاتی را از منوی پایین انتخاب کنید 👇"
+
+#: bot/handlers/users/increase_balance.py:16
+#: bot/handlers/users/increase_balance.py:31
+#: bot/handlers/users/increase_balance.py:64
+msgid "Please enter the amount you want to increase"
+msgstr "لطفا مقداری که می‌خواهید به موجودی اضافه کنید را وارد نمایید"
 
 #: bot/handlers/users/increase_balance.py:34
 msgid ""
@@ -183,10 +236,11 @@ msgstr ""
 #: bot/handlers/users/manage_servers.py:169
 #: bot/handlers/users/manage_servers.py:195
 #: bot/handlers/users/manage_servers.py:221
+#: bot/handlers/users/manage_servers.py:247
 msgid "Ok! What do you want to do ?"
 msgstr "خب! می‌خواهید چه کنید ؟"
 
-#: bot/handlers/users/manage_admins.py:28 bot/keyboards/default/default.py:29
+#: bot/handlers/users/manage_admins.py:28 bot/keyboards/default/default.py:31
 msgid "Add Admin ➕"
 msgstr "افزودن ادمین ➕"
 
@@ -198,7 +252,7 @@ msgstr ""
 "نام کاربری یا آیدی عددی کاربری که می‌خواهید ادمین شود را وارد کنید.\n"
 "نکته: مطمئن شوید کاربر مورد نظر به ربات پیاده داده است."
 
-#: bot/handlers/users/manage_admins.py:34 bot/keyboards/default/default.py:29
+#: bot/handlers/users/manage_admins.py:34 bot/keyboards/default/default.py:31
 msgid "Show and Delete Admins ❌"
 msgstr "نمایش و حذف ادمین‌ها ❌"
 
@@ -241,6 +295,7 @@ msgstr "این کاربر هم اکنون دسترسی ادمین دارد."
 #: bot/handlers/users/manage_servers.py:180
 #: bot/handlers/users/manage_servers.py:206
 #: bot/handlers/users/manage_servers.py:232
+#: bot/handlers/users/manage_servers.py:258
 msgid "An error occurred."
 msgstr "خطایی رخ داد."
 
@@ -248,7 +303,7 @@ msgstr "خطایی رخ داد."
 msgid "Admin removed."
 msgstr "ادمین حذف شد."
 
-#: bot/handlers/users/manage_prodcuts.py:30 bot/keyboards/default/default.py:47
+#: bot/handlers/users/manage_prodcuts.py:30 bot/keyboards/default/default.py:49
 msgid "Add Product ➕"
 msgstr "افزودن محصول ➕"
 
@@ -257,7 +312,7 @@ msgstr "افزودن محصول ➕"
 msgid "OK! Now send the Name of the product."
 msgstr "خب! حالا نام این محصول را وارد کنید."
 
-#: bot/handlers/users/manage_prodcuts.py:36 bot/keyboards/default/default.py:47
+#: bot/handlers/users/manage_prodcuts.py:36 bot/keyboards/default/default.py:49
 msgid "Edit Products ✏️"
 msgstr "ویرایش محصولات ✏️"
 
@@ -367,7 +422,7 @@ msgstr "رسید شما رد شد!"
 msgid "Receipt rejected."
 msgstr "رسید رد شد."
 
-#: bot/handlers/users/manage_servers.py:31 bot/keyboards/default/default.py:38
+#: bot/handlers/users/manage_servers.py:31 bot/keyboards/default/default.py:40
 msgid "Add Server ➕"
 msgstr "افزودن سرور ➕"
 
@@ -376,7 +431,7 @@ msgstr "افزودن سرور ➕"
 msgid "OK! Now send the Name of the server."
 msgstr "خب! حالا نام سرور را وارد کنید."
 
-#: bot/handlers/users/manage_servers.py:37 bot/keyboards/default/default.py:38
+#: bot/handlers/users/manage_servers.py:37 bot/keyboards/default/default.py:40
 msgid "Edit Servers ✏️"
 msgstr "ویرایش سرورها ✏️"
 
@@ -434,6 +489,7 @@ msgstr "خب! نام جدید این سرور را وارد کنید."
 #: bot/handlers/users/manage_servers.py:176
 #: bot/handlers/users/manage_servers.py:202
 #: bot/handlers/users/manage_servers.py:228
+#: bot/handlers/users/manage_servers.py:254
 msgid "Server updated."
 msgstr "سرور آپدیت شد."
 
@@ -442,6 +498,10 @@ msgid "OK! Send the new Proxy Path for this server."
 msgstr "خب! Proxy Path جدید سرور را وارد کنید."
 
 #: bot/handlers/users/manage_servers.py:214
+msgid "OK! Send the new Users Path for this server."
+msgstr "خب! Users Path جدید را وارد کنید."
+
+#: bot/handlers/users/manage_servers.py:240
 msgid "OK! Send the new Admin UUID for this server."
 msgstr "خب! Admin UUID جدید سرور را وارد کنید."
 
@@ -465,39 +525,47 @@ msgstr ""
 "سلام {full_name}!\n"
 "زبان خود را انتخاب کنید"
 
-#: bot/handlers/users/start.py:31 bot/keyboards/default/default.py:10
+#: bot/handlers/users/start.py:31 bot/keyboards/default/default.py:11
 msgid "Help 🆘"
 msgstr "راهنمایی 🆘"
 
-#: bot/keyboards/default/default.py:10
+#: bot/keyboards/default/default.py:11
 msgid "Settings 🛠"
 msgstr "تنظیمات 🛠"
 
-#: bot/keyboards/default/default.py:11
+#: bot/keyboards/default/default.py:12
 msgid "My Information ℹ️"
 msgstr "اطلاعات من ℹ️"
 
-#: bot/keyboards/default/default.py:11
+#: bot/keyboards/default/default.py:12
 msgid "Increase Balance💵"
 msgstr "افزایش موجودی💵"
 
-#: bot/keyboards/default/default.py:14
+#: bot/keyboards/default/default.py:13
+msgid "Buy a Service 🛒"
+msgstr "خرید سرویس 🛒"
+
+#: bot/keyboards/default/default.py:13
+msgid "My Services 📜"
+msgstr "سرویس‌های من 📜"
+
+#: bot/keyboards/default/default.py:16
 msgid "Export users 📁"
 msgstr "استخراج کاربران 📁"
 
-#: bot/keyboards/default/default.py:15
+#: bot/keyboards/default/default.py:17
 msgid "Manage receipts 🧾"
 msgstr "مدیریت رسیدها 🧾"
 
-#: bot/keyboards/default/default.py:16
+#: bot/keyboards/default/default.py:18
 msgid "Manage Admins ⚙️"
 msgstr "مدیریت ادمین‌ها ⚙️"
 
-#: bot/keyboards/default/default.py:17
+#: bot/keyboards/default/default.py:19
 msgid "Manage Servers 🖥️"
 msgstr "مدیریت سرورها 🖥️"
 
-#: bot/keyboards/default/default.py:18
+#: bot/keyboards/default/default.py:20
 msgid "Manage Products 🛍️"
 msgstr "مدیریت محصولات 🛍️"
 
@@ -525,7 +593,7 @@ msgstr "ویرایش حجم ✏️"
 msgid "Edit Price ✏️"
 msgstr "ویرایش قیمت ✏️"
 
-#: bot/keyboards/inline/product.py:14 bot/keyboards/inline/server.py:13
+#: bot/keyboards/inline/product.py:14 bot/keyboards/inline/server.py:14
 msgid "Delete 🗑️"
 msgstr "حذف 🗑️"
 
@@ -546,6 +614,10 @@ msgid "Edit Proxy Path ✏️"
 msgstr "ویرایش Proxy Path ✏️"
 
 #: bot/keyboards/inline/server.py:12
+msgid "Edit Users Path ✏️"
+msgstr "ویرایش Users Path ✏️"
+
+#: bot/keyboards/inline/server.py:13
 msgid "Edit Admin UUID ✏️"
 msgstr "ویرایش Admin UUID ✏️"
 

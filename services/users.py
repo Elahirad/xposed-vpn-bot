@@ -69,6 +69,12 @@ def increase_balance(user_id: int, amount: int):
     query.save()
 
 
+def decrease_balance(user_id: int, amount: int):
+    query = User.get_or_none(User.id == user_id)
+    query.balance -= amount
+    query.save()
+
+
 def find_user(id_or_username: str) -> Optional[User]:
     try:
         int_id = int(id_or_username)

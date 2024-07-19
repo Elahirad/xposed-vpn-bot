@@ -8,6 +8,11 @@ def get_products() -> Optional[list[Product]]:
     return list(query)
 
 
+def find_product(name: str) -> Optional[Product]:
+    query = Product.get(Product.name == name)
+    return query
+
+
 def add_product(name: str, server_name: str, days: int, gb_limit: int, price: int) -> Product:
     server = Server.get_or_none(Server.name == server_name)
     product = Product.create(name=name, server=server, days=days, gb_limit=gb_limit, price=price)
