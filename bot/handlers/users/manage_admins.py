@@ -20,18 +20,18 @@ async def _manage_admins(message: Message):
 
 @dp.message_handler(state=UserStates.manage_admins, is_admin=True)
 async def _handle_manage_admins(message: Message, user: User):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('You have successfully returned to the main menu.'),
                              reply_markup=get_default_markup(user))
         await UserStates.main_page.set()
         return
-    if message.text == 'Add Admin ➕':
+    if message.text == _('Add Admin ➕'):
         await message.answer(
             _('Enter the username or numeric id of the user you want to make admin.\nNote: Make sure the user contacted the bot.'),
             reply_markup=get_back_markup())
         await UserStates.add_admin.set()
         return
-    if message.text == 'Show and Delete Admins ❌':
+    if message.text == _('Show and Delete Admins ❌'):
         for admin in get_admins():
             text = _('Numeric ID: {numeric_id}\nName: {name}\nUsername: {username}').format(numeric_id=admin.id,
                                                                                             name=admin.name,
@@ -41,7 +41,7 @@ async def _handle_manage_admins(message: Message, user: User):
 
 @dp.message_handler(state=UserStates.add_admin, is_admin=True)
 async def _handle_add_admin(message: Message, user: User):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('Ok! What do you want to do ?'),
                              reply_markup=get_manage_admins_markup())
         await UserStates.manage_admins.set()

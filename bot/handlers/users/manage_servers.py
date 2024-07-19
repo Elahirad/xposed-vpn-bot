@@ -23,18 +23,18 @@ async def _manage_servers(message: Message):
 
 @dp.message_handler(state=UserStates.ManageServers.main, is_admin=True)
 async def _handle_manage_servers(message: Message, user: User):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('You have successfully returned to the main menu.'),
                              reply_markup=get_default_markup(user))
         await UserStates.main_page.set()
         return
-    if message.text == 'Add Server ➕':
+    if message.text == _('Add Server ➕'):
         await message.answer(
             _('OK! Now send the Name of the server.'),
             reply_markup=get_back_markup())
         await UserStates.ManageServers.get_name.set()
         return
-    if message.text == 'Edit Servers ✏️':
+    if message.text == _('Edit Servers ✏️'):
         servers = get_servers()
 
         if not len(servers):
@@ -51,7 +51,7 @@ async def _handle_manage_servers(message: Message, user: User):
 
 @dp.message_handler(state=UserStates.ManageServers.get_name, is_admin=True)
 async def _get_name(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('Ok! What do you want to do ?'),
                              reply_markup=get_manage_servers_markup())
         await UserStates.ManageServers.main.set()
@@ -63,7 +63,7 @@ async def _get_name(message: Message, user: User, state: FSMContext):
 
 @dp.message_handler(state=UserStates.ManageServers.get_url, is_admin=True)
 async def _get_url(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('OK! Now send the Name of the server.'),
                              reply_markup=get_back_markup())
         await UserStates.ManageServers.get_name.set()
@@ -75,7 +75,7 @@ async def _get_url(message: Message, user: User, state: FSMContext):
 
 @dp.message_handler(state=UserStates.ManageServers.get_proxy_path, is_admin=True)
 async def _get_proxy_path(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('OK! Now send the URL of the server.'),
                              reply_markup=get_back_markup())
         await UserStates.ManageServers.get_url.set()
@@ -87,7 +87,7 @@ async def _get_proxy_path(message: Message, user: User, state: FSMContext):
 
 @dp.message_handler(state=UserStates.ManageServers.get_admin_uuid, is_admin=True)
 async def _get_admin_uuid(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('OK! Now send the Proxy Path of the server.'),
                              reply_markup=get_back_markup())
         await UserStates.ManageServers.get_proxy_path.set()
@@ -124,7 +124,7 @@ async def _update_server_name(callback_query: types.CallbackQuery, regexp: Regex
 
 @dp.message_handler(state=UserStates.ManageServers.edit_name, is_admin=True)
 async def _update_name(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('Ok! What do you want to do ?'),
                              reply_markup=get_manage_servers_markup())
         await UserStates.ManageServers.main.set()
@@ -150,7 +150,7 @@ async def _update_server_url(callback_query: types.CallbackQuery, regexp: Regexp
 
 @dp.message_handler(state=UserStates.ManageServers.edit_url, is_admin=True)
 async def _update_url(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('Ok! What do you want to do ?'),
                              reply_markup=get_manage_servers_markup())
         await UserStates.ManageServers.main.set()
@@ -176,7 +176,7 @@ async def _update_server_proxy_path(callback_query: types.CallbackQuery, regexp:
 
 @dp.message_handler(state=UserStates.ManageServers.edit_proxy_path, is_admin=True)
 async def _update_proxy_path(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('Ok! What do you want to do ?'),
                              reply_markup=get_manage_servers_markup())
         await UserStates.ManageServers.main.set()
@@ -202,7 +202,7 @@ async def _update_server_admin_uuid(callback_query: types.CallbackQuery, regexp:
 
 @dp.message_handler(state=UserStates.ManageServers.edit_admin_uuid, is_admin=True)
 async def _update_admin_uuid(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('Ok! What do you want to do ?'),
                              reply_markup=get_manage_servers_markup())
         await UserStates.ManageServers.main.set()

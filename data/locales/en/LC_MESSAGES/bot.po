@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bot VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-19 02:48+0330\n"
+"POT-Creation-Date: 2024-07-19 12:02+0330\n"
 "PO-Revision-Date: 2022-04-02 14:16+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -23,11 +23,15 @@ msgid "export users to csv"
 msgstr ""
 
 #: bot/commands/admin.py:12
-msgid "count users who contacted the bot"
+msgid "manage unresolved receipts"
 msgstr ""
 
 #: bot/commands/admin.py:13
-msgid "count active users (who didn't block the bot)"
+msgid "manage admins"
+msgstr ""
+
+#: bot/commands/admin.py:14
+msgid "manage servers"
 msgstr ""
 
 #: bot/commands/default.py:8
@@ -50,6 +54,10 @@ msgstr ""
 msgid "show user info"
 msgstr ""
 
+#: bot/commands/default.py:13
+msgid "increase balance"
+msgstr ""
+
 #: bot/handlers/users/admin_menu.py:25 bot/handlers/users/admin_menu.py:33
 msgid "Total users: {count}"
 msgstr ""
@@ -63,28 +71,36 @@ msgid "Choose an action from the menu 👇"
 msgstr ""
 
 #: bot/handlers/users/increase_balance.py:16
-#: bot/handlers/users/increase_balance.py:26
+#: bot/handlers/users/increase_balance.py:31
+#: bot/handlers/users/increase_balance.py:64
 msgid "Please enter the amount you want to increase"
 msgstr ""
 
-#: bot/handlers/users/increase_balance.py:29
+#: bot/handlers/users/increase_balance.py:24
+#: bot/handlers/users/manage_admins.py:24
+#: bot/handlers/users/manage_prodcuts.py:26
+#: bot/handlers/users/manage_servers.py:27
+msgid "You have successfully returned to the main menu."
+msgstr ""
+
+#: bot/handlers/users/increase_balance.py:34
 msgid ""
 "OK! Now send {amount} Tomans to below card number and send the receipt\n"
 "Touch the card number once to copy it!\n"
 "<code>{card_number}</code> "
 msgstr ""
 
-#: bot/handlers/users/increase_balance.py:45
+#: bot/handlers/users/increase_balance.py:50
 msgid "You receipt is received. Wait for approval process."
 msgstr ""
 
-#: bot/handlers/users/increase_balance.py:48
+#: bot/handlers/users/increase_balance.py:53
 msgid ""
 "Dear Admin !\n"
 "New receipt is arrived. Check your panel please."
 msgstr ""
 
-#: bot/handlers/users/increase_balance.py:58
+#: bot/handlers/users/increase_balance.py:67
 msgid "Please send the receipt image"
 msgstr ""
 
@@ -102,6 +118,187 @@ msgstr ""
 
 #: bot/handlers/users/info.py:11
 msgid "Tomans"
+msgstr ""
+
+#: bot/handlers/users/manage_admins.py:16
+#: bot/handlers/users/manage_admins.py:45
+#: bot/handlers/users/manage_prodcuts.py:18
+#: bot/handlers/users/manage_prodcuts.py:52
+#: bot/handlers/users/manage_prodcuts.py:137
+#: bot/handlers/users/manage_prodcuts.py:165
+#: bot/handlers/users/manage_prodcuts.py:192
+#: bot/handlers/users/manage_prodcuts.py:219
+#: bot/handlers/users/manage_prodcuts.py:246
+#: bot/handlers/users/manage_servers.py:19
+#: bot/handlers/users/manage_servers.py:55
+#: bot/handlers/users/manage_servers.py:128
+#: bot/handlers/users/manage_servers.py:154
+#: bot/handlers/users/manage_servers.py:180
+#: bot/handlers/users/manage_servers.py:206
+msgid "Ok! What do you want to do ?"
+msgstr ""
+
+#: bot/handlers/users/manage_admins.py:23
+#: bot/handlers/users/manage_admins.py:44
+#: bot/handlers/users/manage_prodcuts.py:25
+#: bot/handlers/users/manage_prodcuts.py:51
+#: bot/handlers/users/manage_prodcuts.py:63
+#: bot/handlers/users/manage_prodcuts.py:75
+#: bot/handlers/users/manage_prodcuts.py:87
+#: bot/handlers/users/manage_prodcuts.py:99
+#: bot/handlers/users/manage_prodcuts.py:136
+#: bot/handlers/users/manage_prodcuts.py:164
+#: bot/handlers/users/manage_prodcuts.py:191
+#: bot/handlers/users/manage_prodcuts.py:218
+#: bot/handlers/users/manage_prodcuts.py:245
+#: bot/handlers/users/manage_servers.py:26
+#: bot/handlers/users/manage_servers.py:54
+#: bot/handlers/users/manage_servers.py:66
+#: bot/handlers/users/manage_servers.py:78
+#: bot/handlers/users/manage_servers.py:90
+#: bot/handlers/users/manage_servers.py:127
+#: bot/handlers/users/manage_servers.py:153
+#: bot/handlers/users/manage_servers.py:179
+#: bot/handlers/users/manage_servers.py:205 bot/keyboards/default/default.py:30
+#: bot/keyboards/default/default.py:39 bot/keyboards/default/default.py:48
+#: bot/keyboards/default/default.py:56 bot/keyboards/default/default.py:66
+msgid "Back 🔙"
+msgstr ""
+
+#: bot/handlers/users/manage_admins.py:28 bot/keyboards/default/default.py:29
+msgid "Add Admin ➕"
+msgstr ""
+
+#: bot/handlers/users/manage_admins.py:30
+msgid ""
+"Enter the username or numeric id of the user you want to make admin.\n"
+"Note: Make sure the user contacted the bot."
+msgstr ""
+
+#: bot/handlers/users/manage_admins.py:34 bot/keyboards/default/default.py:29
+msgid "Show and Delete Admins ❌"
+msgstr ""
+
+#: bot/handlers/users/manage_admins.py:36
+msgid ""
+"Numeric ID: {numeric_id}\n"
+"Name: {name}\n"
+"Username: {username}"
+msgstr ""
+
+#: bot/handlers/users/manage_admins.py:52
+msgid ""
+"There is no user with this username or numeric id.\n"
+"Make sure the user has contacted the bot"
+msgstr ""
+
+#: bot/handlers/users/manage_admins.py:57
+msgid "This user now have admin privileges."
+msgstr ""
+
+#: bot/handlers/users/manage_admins.py:60
+#: bot/handlers/users/manage_admins.py:72
+#: bot/handlers/users/manage_prodcuts.py:111
+#: bot/handlers/users/manage_prodcuts.py:122
+#: bot/handlers/users/manage_prodcuts.py:148
+#: bot/handlers/users/manage_prodcuts.py:176
+#: bot/handlers/users/manage_prodcuts.py:203
+#: bot/handlers/users/manage_prodcuts.py:230
+#: bot/handlers/users/manage_prodcuts.py:257
+#: bot/handlers/users/manage_receipts.py:48
+#: bot/handlers/users/manage_receipts.py:66
+#: bot/handlers/users/manage_servers.py:102
+#: bot/handlers/users/manage_servers.py:113
+#: bot/handlers/users/manage_servers.py:139
+#: bot/handlers/users/manage_servers.py:165
+#: bot/handlers/users/manage_servers.py:191
+#: bot/handlers/users/manage_servers.py:217
+msgid "An error occurred."
+msgstr ""
+
+#: bot/handlers/users/manage_admins.py:69
+msgid "Admin removed."
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:30 bot/keyboards/default/default.py:47
+msgid "Add Product ➕"
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:32
+#: bot/handlers/users/manage_prodcuts.py:64
+msgid "OK! Now send the Name of the product."
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:36 bot/keyboards/default/default.py:47
+msgid "Edit Products ✏️"
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:40
+msgid "There is no product in the database."
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:43
+msgid ""
+"Name: {name}\n"
+"Server: {server}\n"
+"Days: {days}\n"
+"GB Limit: {gb_limit}\n"
+"Price: {price}"
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:57
+#: bot/handlers/users/manage_prodcuts.py:76
+msgid "OK! Now choose the server of this product."
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:69
+#: bot/handlers/users/manage_prodcuts.py:88
+msgid "OK! Now send the days of the product."
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:81
+#: bot/handlers/users/manage_prodcuts.py:100
+msgid "OK! Now send the GB Limit of the product."
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:93
+msgid "OK! Now send the Price of the product."
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:107
+msgid "Product added!"
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:119
+msgid "Product removed."
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:130
+msgid "OK! Send the new Name for this product."
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:144
+#: bot/handlers/users/manage_prodcuts.py:172
+#: bot/handlers/users/manage_prodcuts.py:199
+#: bot/handlers/users/manage_prodcuts.py:226
+#: bot/handlers/users/manage_prodcuts.py:253
+msgid "Product updated."
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:157
+msgid "OK! Choose new Server for this product."
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:185
+msgid "OK! Send the new days for this product."
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:212
+msgid "OK! Send the new GB Limit for this product."
+msgstr ""
+
+#: bot/handlers/users/manage_prodcuts.py:239
+msgid "OK! Send the new Price for this product."
 msgstr ""
 
 #: bot/handlers/users/manage_receipts.py:19
@@ -127,17 +324,79 @@ msgstr ""
 msgid "Receipt not found."
 msgstr ""
 
-#: bot/handlers/users/manage_receipts.py:48
-#: bot/handlers/users/manage_receipts.py:66
-msgid "An error occurred."
-msgstr ""
-
 #: bot/handlers/users/manage_receipts.py:60
 msgid "Your receipt has been rejected!"
 msgstr ""
 
 #: bot/handlers/users/manage_receipts.py:61
 msgid "Receipt rejected."
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:31 bot/keyboards/default/default.py:38
+msgid "Add Server ➕"
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:33
+#: bot/handlers/users/manage_servers.py:67
+msgid "OK! Now send the Name of the server."
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:37 bot/keyboards/default/default.py:38
+msgid "Edit Servers ✏️"
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:41
+msgid "There is no server in the database."
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:45
+msgid ""
+"Name: {name}\n"
+"URL: {url}\n"
+"Proxy Path: {proxy_path}\n"
+"Admin UUID: {admin_uuid}"
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:60
+#: bot/handlers/users/manage_servers.py:79
+msgid "OK! Now send the URL of the server."
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:72
+#: bot/handlers/users/manage_servers.py:91
+msgid "OK! Now send the Proxy Path of the server."
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:84
+msgid "OK! Now send the Admin UUID of the server."
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:98
+msgid "Server added."
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:110
+msgid "Server removed."
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:121
+#: bot/handlers/users/manage_servers.py:147
+msgid "OK! Send the new URL for this server."
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:135
+#: bot/handlers/users/manage_servers.py:161
+#: bot/handlers/users/manage_servers.py:187
+#: bot/handlers/users/manage_servers.py:213
+msgid "Server updated."
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:173
+msgid "OK! Send the new Proxy Path for this server."
+msgstr ""
+
+#: bot/handlers/users/manage_servers.py:199
+msgid "OK! Send the new Admin UUID for this server."
 msgstr ""
 
 #: bot/handlers/users/settings.py:22
@@ -156,28 +415,68 @@ msgid ""
 "Choose your language"
 msgstr ""
 
-#: bot/handlers/users/start.py:31 bot/keyboards/default/default.py:9
+#: bot/handlers/users/start.py:31 bot/keyboards/default/default.py:10
 msgid "Help 🆘"
 msgstr ""
 
-#: bot/keyboards/default/default.py:9
+#: bot/keyboards/default/default.py:10
 msgid "Settings 🛠"
 msgstr ""
 
-#: bot/keyboards/default/default.py:10
+#: bot/keyboards/default/default.py:11
 msgid "My Information ℹ️"
 msgstr ""
 
-#: bot/keyboards/default/default.py:10
+#: bot/keyboards/default/default.py:11
 msgid "Increase Balance💵"
 msgstr ""
 
-#: bot/keyboards/default/default.py:13
+#: bot/keyboards/default/default.py:14
 msgid "Export users 📁"
 msgstr ""
 
-#: bot/keyboards/default/default.py:14
+#: bot/keyboards/default/default.py:15
 msgid "Manage receipts 🧾"
+msgstr ""
+
+#: bot/keyboards/default/default.py:16
+msgid "Manage Admins ⚙️"
+msgstr ""
+
+#: bot/keyboards/default/default.py:17
+msgid "Manage Servers 🖥️"
+msgstr ""
+
+#: bot/keyboards/default/default.py:18
+msgid "Manage Products 🛍️"
+msgstr ""
+
+#: bot/keyboards/inline/admin_delete.py:9
+msgid "Remove 🗑️"
+msgstr ""
+
+#: bot/keyboards/inline/product.py:9 bot/keyboards/inline/server.py:9
+msgid "Edit Name ✏️"
+msgstr ""
+
+#: bot/keyboards/inline/product.py:10
+msgid "Edit Server ✏️"
+msgstr ""
+
+#: bot/keyboards/inline/product.py:11
+msgid "Edit Package Days ✏️"
+msgstr ""
+
+#: bot/keyboards/inline/product.py:12
+msgid "Edit GB Limit ✏️"
+msgstr ""
+
+#: bot/keyboards/inline/product.py:13
+msgid "Edit Price ✏️"
+msgstr ""
+
+#: bot/keyboards/inline/product.py:14 bot/keyboards/inline/server.py:13
+msgid "Delete 🗑️"
 msgstr ""
 
 #: bot/keyboards/inline/receipt.py:9
@@ -186,6 +485,18 @@ msgstr ""
 
 #: bot/keyboards/inline/receipt.py:10
 msgid "Reject ❌"
+msgstr ""
+
+#: bot/keyboards/inline/server.py:10
+msgid "Edit URL ✏️"
+msgstr ""
+
+#: bot/keyboards/inline/server.py:11
+msgid "Edit Proxy Path ✏️"
+msgstr ""
+
+#: bot/keyboards/inline/server.py:12
+msgid "Edit Admin UUID ✏️"
 msgstr ""
 
 #: bot/middlewares/throttling.py:35
@@ -220,5 +531,11 @@ msgstr ""
 #~ "below card number and send the "
 #~ "receipt\n"
 #~ "<code>{card_number}</code> "
+#~ msgstr ""
+
+#~ msgid "count users who contacted the bot"
+#~ msgstr ""
+
+#~ msgid "count active users (who didn't block the bot)"
 #~ msgstr ""
 

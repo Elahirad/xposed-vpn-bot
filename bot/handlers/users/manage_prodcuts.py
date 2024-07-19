@@ -22,18 +22,18 @@ async def _manage_products(message: Message):
 
 @dp.message_handler(state=UserStates.ManageProducts.main, is_admin=True)
 async def _handle_manage_products(message: Message, user: User):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('You have successfully returned to the main menu.'),
                              reply_markup=get_default_markup(user))
         await UserStates.main_page.set()
         return
-    if message.text == 'Add Product ➕':
+    if message.text == _('Add Product ➕'):
         await message.answer(
             _('OK! Now send the Name of the product.'),
             reply_markup=get_back_markup())
         await UserStates.ManageProducts.get_name.set()
         return
-    if message.text == 'Edit Products ✏️':
+    if message.text == _('Edit Products ✏️'):
         products = get_products()
 
         if not len(products):
@@ -48,7 +48,7 @@ async def _handle_manage_products(message: Message, user: User):
 
 @dp.message_handler(state=UserStates.ManageProducts.get_name, is_admin=True)
 async def _get_name(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('Ok! What do you want to do ?'),
                              reply_markup=get_manage_products_markup())
         await UserStates.ManageProducts.main.set()
@@ -60,7 +60,7 @@ async def _get_name(message: Message, user: User, state: FSMContext):
 
 @dp.message_handler(state=UserStates.ManageProducts.get_server, is_admin=True)
 async def _get_server(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('OK! Now send the Name of the product.'),
                              reply_markup=get_back_markup())
         await UserStates.ManageProducts.get_name.set()
@@ -72,7 +72,7 @@ async def _get_server(message: Message, user: User, state: FSMContext):
 
 @dp.message_handler(state=UserStates.ManageProducts.get_days, is_admin=True)
 async def _get_days(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('OK! Now choose the server of this product.'),
                              reply_markup=get_servers_markup())
         await UserStates.ManageProducts.get_server.set()
@@ -84,7 +84,7 @@ async def _get_days(message: Message, user: User, state: FSMContext):
 
 @dp.message_handler(state=UserStates.ManageProducts.get_gb_limit, is_admin=True)
 async def _get_gb_limit(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('OK! Now send the days of the product.'),
                              reply_markup=get_back_markup())
         await UserStates.ManageProducts.get_days.set()
@@ -96,7 +96,7 @@ async def _get_gb_limit(message: Message, user: User, state: FSMContext):
 
 @dp.message_handler(state=UserStates.ManageProducts.get_price, is_admin=True)
 async def _get_gb_limit(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('OK! Now send the GB Limit of the product.'),
                              reply_markup=get_back_markup())
         await UserStates.ManageProducts.get_days.set()
@@ -133,7 +133,7 @@ async def _update_product_name(callback_query: types.CallbackQuery, regexp: Rege
 
 @dp.message_handler(state=UserStates.ManageProducts.edit_name, is_admin=True)
 async def _update_name(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('Ok! What do you want to do ?'),
                              reply_markup=get_manage_products_markup())
         await UserStates.ManageProducts.main.set()
@@ -161,7 +161,7 @@ async def _update_product_server(callback_query: types.CallbackQuery, regexp: Re
 
 @dp.message_handler(state=UserStates.ManageProducts.edit_server, is_admin=True)
 async def _update_server(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('Ok! What do you want to do ?'),
                              reply_markup=get_manage_products_markup())
         await UserStates.ManageProducts.main.set()
@@ -188,7 +188,7 @@ async def _update_product_days(callback_query: types.CallbackQuery, regexp: Rege
 
 @dp.message_handler(state=UserStates.ManageProducts.edit_days, is_admin=True)
 async def _update_days(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('Ok! What do you want to do ?'),
                              reply_markup=get_manage_products_markup())
         await UserStates.ManageProducts.main.set()
@@ -215,7 +215,7 @@ async def _update_product_gb_limit(callback_query: types.CallbackQuery, regexp: 
 
 @dp.message_handler(state=UserStates.ManageProducts.edit_gb_limit, is_admin=True)
 async def _update_gb_limit(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('Ok! What do you want to do ?'),
                              reply_markup=get_manage_products_markup())
         await UserStates.ManageProducts.main.set()
@@ -242,7 +242,7 @@ async def _update_product_gb_limit(callback_query: types.CallbackQuery, regexp: 
 
 @dp.message_handler(state=UserStates.ManageProducts.edit_price, is_admin=True)
 async def _update_gb_limit(message: Message, user: User, state: FSMContext):
-    if message.text == 'Back 🔙':
+    if message.text == _('Back 🔙'):
         await message.answer(_('Ok! What do you want to do ?'),
                              reply_markup=get_manage_products_markup())
         await UserStates.ManageProducts.main.set()
