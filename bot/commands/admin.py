@@ -8,6 +8,8 @@ def get_admin_commands(lang: str = 'en') -> list[BotCommand]:
     commands = get_default_commands(lang)
 
     commands.extend([
+        BotCommand('/broadcast', _('Send broadcast message.')),
+        BotCommand('/private_message', _('Send private message.')),
         BotCommand('/export_users', _('export users to csv', locale=lang)),
         BotCommand('/manage_receipts', _('manage unresolved receipts')),
         BotCommand('/manage_admins', _('manage admins')),

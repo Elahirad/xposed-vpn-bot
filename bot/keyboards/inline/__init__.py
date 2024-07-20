@@ -4,3 +4,4 @@ from .admin_delete import get_admin_delete_markup
 from .server import get_server_inline_markup
 from .product import get_product_inline_markup
 from .service import get_service_inline_markup
+from .message import get_reply_markup
