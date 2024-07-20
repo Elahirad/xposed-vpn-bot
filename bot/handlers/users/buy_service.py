@@ -70,12 +70,15 @@ async def _get_confirmation(message: Message, state: FSMContext, user: User):
                 reply_markup=get_default_markup(user))
             await UserStates.main_page.set()
             return
-
-        hiddify = HiddifyInterface(product.server.url, product.server.proxy_path,
-                                   product.server.users_path, product.server.admin_uuid)
-        service = hiddify.create_service(name, product.days, product.gb_limit)
-        add_service(service['uuid'], user.id, product.server.id, product.id)
-        decrease_balance(user.id, product.price)
-        await message.answer(_('Purchased successfully!\nYour subscription link is:\n{link}').format(
-            link=hiddify.get_sub_link(service['uuid'])), reply_markup=get_default_markup(user))
-        await UserStates.main_page.set()
+        try:
+            hiddify = HiddifyInterface(product.server.url, product.server.proxy_path,
+                                       product.server.users_path, product.server.admin_uuid)
+            service = hiddify.create_service(name, product.days, product.gb_limit)
+            add_service(service['uuid'], user.id, product.server.id, product.id)
+            decrease_balance(user.id, product.price)
+            await message.answer(_('Purchased successfully!\nYour subscription link is:\n{link}').format(
+                link=hiddify.get_sub_link(service['uuid'])), reply_markup=get_default_markup(user))
+            await UserStates.main_page.set()
+        except Exception as e:
+            print(e)
+            await message.answer(_('An error occurred.'))
