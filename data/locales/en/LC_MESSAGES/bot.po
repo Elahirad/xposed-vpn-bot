@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bot VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-22 23:19+0330\n"
+"POT-Creation-Date: 2024-07-22 23:31+0330\n"
 "PO-Revision-Date: 2022-04-02 14:16+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -181,8 +181,8 @@ msgstr ""
 #: bot/handlers/users/manage_prodcuts.py:203
 #: bot/handlers/users/manage_prodcuts.py:230
 #: bot/handlers/users/manage_prodcuts.py:257
-#: bot/handlers/users/manage_receipts.py:48
-#: bot/handlers/users/manage_receipts.py:66
+#: bot/handlers/users/manage_receipts.py:49
+#: bot/handlers/users/manage_receipts.py:67
 #: bot/handlers/users/manage_servers.py:117
 #: bot/handlers/users/manage_servers.py:128
 #: bot/handlers/users/manage_servers.py:154
@@ -248,6 +248,8 @@ msgstr ""
 msgid ""
 "OK! Now send {amount} Tomans to below card number and send the receipt\n"
 "Touch the card number once to copy it!\n"
+"⚠️Make sure to transfer money exactly to this card number. otherwise you "
+"will lose your money⚠️\n"
 "<code>{card_number}</code> "
 msgstr ""
 
@@ -429,27 +431,28 @@ msgstr ""
 #: bot/handlers/users/manage_receipts.py:24
 msgid ""
 "User: @{user}\n"
-"Amount: {amount} Tomans"
-msgstr ""
-
-#: bot/handlers/users/manage_receipts.py:42
-msgid "Your receipt has been approved!"
+"Amount: {amount} Tomans\n"
+"Card: {card}"
 msgstr ""
 
 #: bot/handlers/users/manage_receipts.py:43
+msgid "Your receipt has been approved!"
+msgstr ""
+
+#: bot/handlers/users/manage_receipts.py:44
 msgid "Receipt approved."
 msgstr ""
 
-#: bot/handlers/users/manage_receipts.py:46
-#: bot/handlers/users/manage_receipts.py:64
+#: bot/handlers/users/manage_receipts.py:47
+#: bot/handlers/users/manage_receipts.py:65
 msgid "Receipt not found."
 msgstr ""
 
-#: bot/handlers/users/manage_receipts.py:60
+#: bot/handlers/users/manage_receipts.py:61
 msgid "Your receipt has been rejected!"
 msgstr ""
 
-#: bot/handlers/users/manage_receipts.py:61
+#: bot/handlers/users/manage_receipts.py:62
 msgid "Receipt rejected."
 msgstr ""
 
@@ -856,5 +859,18 @@ msgstr ""
 #~ msgid ""
 #~ "Private message failed.\n"
 #~ "Command usage: /private_message [numeric_id] [message]"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "OK! Now send {amount} Tomans to "
+#~ "below card number and send the "
+#~ "receipt\n"
+#~ "Touch the card number once to copy it!\n"
+#~ "<code>{card_number}</code> "
+#~ msgstr ""
+
+#~ msgid ""
+#~ "User: @{user}\n"
+#~ "Amount: {amount} Tomans"
 #~ msgstr ""
 

@@ -33,7 +33,7 @@ async def _get_amount(message: Message, user: User, state: FSMContext):
     try:
         card = get_best_card()
         text = _(
-            'OK! Now send {amount} Tomans to below card number and send the receipt\nTouch the card number once to copy it!\n<code>{card_number}</code> ').format(
+            'OK! Now send {amount} Tomans to below card number and send the receipt\nTouch the card number once to copy it!\n⚠️Make sure to transfer money exactly to this card number. otherwise you will lose your money⚠️\n<code>{card_number}</code> ').format(
             amount=amount, card_number=card.number)
         await message.answer(text, parse_mode=types.ParseMode.HTML, reply_markup=get_back_markup())
         await state.update_data(amount=amount)

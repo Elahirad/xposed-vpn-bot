@@ -21,9 +21,10 @@ async def _manage_receipts(message: Message):
     for receipt in receipts:
         markup = get_receipt_inline_markup(receipt.id)
         await message.answer_photo(photo=receipt.receipt_photo,
-                                   caption=_('User: @{user}\nAmount: {amount} Tomans').format(
+                                   caption=_('User: @{user}\nAmount: {amount} Tomans\nCard: {card}').format(
                                        user=receipt.user.username,
-                                       amount=receipt.amount),
+                                       amount=receipt.amount,
+                                       card=receipt.card.number),
                                    reply_markup=markup)
 
 

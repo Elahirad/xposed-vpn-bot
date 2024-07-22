@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bot VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-22 23:19+0330\n"
+"POT-Creation-Date: 2024-07-22 23:31+0330\n"
 "PO-Revision-Date: 2024-07-18 20:04+0330\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fa\n"
@@ -193,8 +193,8 @@ msgstr ""
 #: bot/handlers/users/manage_prodcuts.py:203
 #: bot/handlers/users/manage_prodcuts.py:230
 #: bot/handlers/users/manage_prodcuts.py:257
-#: bot/handlers/users/manage_receipts.py:48
-#: bot/handlers/users/manage_receipts.py:66
+#: bot/handlers/users/manage_receipts.py:49
+#: bot/handlers/users/manage_receipts.py:67
 #: bot/handlers/users/manage_servers.py:117
 #: bot/handlers/users/manage_servers.py:128
 #: bot/handlers/users/manage_servers.py:154
@@ -266,11 +266,15 @@ msgstr "لطفا مقداری که می‌خواهید به موجودی اضا�
 msgid ""
 "OK! Now send {amount} Tomans to below card number and send the receipt\n"
 "Touch the card number once to copy it!\n"
+"⚠️Make sure to transfer money exactly to this card number. otherwise you "
+"will lose your money⚠️\n"
 "<code>{card_number}</code> "
 msgstr ""
 "دریافت شد! حالا مبلغ {amount} تومان را به شماره کارت زیر واریز نموده و "
 "رسید را ارسال فرمایید. \n"
 "یک بار بر روی شماره کارت بزنید تا کپی شود!\n"
+"⚠️دقت کنید که مبلغ حتما باید به شماره کارت ذکر شده واریز شود. در غیر این "
+"صورت پول خود را از دست خواهید داد⚠️\n"
 "<code>{card_number}</code> "
 
 #: bot/handlers/users/increase_balance.py:59
@@ -467,29 +471,30 @@ msgstr "رسیدی وجود ندارد!"
 #: bot/handlers/users/manage_receipts.py:24
 msgid ""
 "User: @{user}\n"
-"Amount: {amount} Tomans"
+"Amount: {amount} Tomans\n"
+"Card: {card}"
 msgstr ""
 "کاربر: @{user}\n"
-"مقدار: {amount} تومان"
+"مقدار: {amount} تومانکارت: {card}"
 
-#: bot/handlers/users/manage_receipts.py:42
+#: bot/handlers/users/manage_receipts.py:43
 msgid "Your receipt has been approved!"
 msgstr "رسید شما تایید شد!"
 
-#: bot/handlers/users/manage_receipts.py:43
+#: bot/handlers/users/manage_receipts.py:44
 msgid "Receipt approved."
 msgstr "رسید تایید شد!"
 
-#: bot/handlers/users/manage_receipts.py:46
-#: bot/handlers/users/manage_receipts.py:64
+#: bot/handlers/users/manage_receipts.py:47
+#: bot/handlers/users/manage_receipts.py:65
 msgid "Receipt not found."
 msgstr "رسید یافت نشد."
 
-#: bot/handlers/users/manage_receipts.py:60
+#: bot/handlers/users/manage_receipts.py:61
 msgid "Your receipt has been rejected!"
 msgstr "رسید شما رد شد!"
 
-#: bot/handlers/users/manage_receipts.py:61
+#: bot/handlers/users/manage_receipts.py:62
 msgid "Receipt rejected."
 msgstr "رسید رد شد."
 
