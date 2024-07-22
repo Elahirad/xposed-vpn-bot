@@ -10,11 +10,13 @@ def get_admin_commands(lang: str = 'en') -> list[BotCommand]:
     commands.extend([
         BotCommand('/broadcast', _('Send broadcast message.')),
         BotCommand('/private_message', _('Send private message.')),
-        BotCommand('/export_users', _('export users to csv', locale=lang)),
-        BotCommand('/manage_receipts', _('manage unresolved receipts')),
-        BotCommand('/manage_admins', _('manage admins')),
-        BotCommand('/manage_servers', _('manage servers')),
-        BotCommand('/manage_products', _('manage products')),
+        BotCommand('/manage_cards', _('Manage cards.')),
+        BotCommand('/add_card', _('Add cards.')),
+        BotCommand('/manage_receipts', _('Manage unresolved receipts')),
+        BotCommand('/manage_admins', _('Manage admins')),
+        BotCommand('/manage_servers', _('Manage servers')),
+        BotCommand('/manage_products', _('Manage products')),
+        BotCommand('/export_users', _('Export users to csv', locale=lang)),
     ])
 
     return commands

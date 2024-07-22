@@ -16,10 +16,10 @@ async def _broadcast_message(message: Message, user: User):
         msg = message.text.split(maxsplit=1)[1]
         users = get_users()
         for user in users:
-            await bot.send_message(user.id, msg)
+            await bot.send_message(user.id, _('Broadcast message 📢:\n{msg}').format(msg=msg))
         await message.reply(_("Broadcast message sent."))
     except:
-        await message.reply(_("Broadcast message failed.\nCommand usage: /broadcast [message]"))
+        await message.reply(_("Broadcast message failed.\nCommand usage:\n/broadcast [message]"))
 
 
 @dp.message_handler(commands=["private_message"], state='*', is_admin=True)
@@ -32,7 +32,7 @@ async def send_private_message(message: Message, user: User):
     except ChatNotFound:
         await message.reply(_("User not found."))
     except:
-        await message.reply(_("Private message failed.\nCommand usage: /private_message [numeric_id] [message]"))
+        await message.reply(_("Private message failed.\nCommand usage:\n/private_message [numeric_id] [message]"))
 
 
 @dp.callback_query_handler(lambda c: c.data.startswith('reply_'), state='*')

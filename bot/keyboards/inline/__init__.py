@@ -5,3 +5,4 @@ from .server import get_server_inline_markup
 from .product import get_product_inline_markup
 from .service import get_service_inline_markup
 from .message import get_reply_markup
+from .card import get_card_markup

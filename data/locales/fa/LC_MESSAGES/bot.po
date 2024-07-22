@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bot VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-20 00:31+0330\n"
+"POT-Creation-Date: 2024-07-22 23:19+0330\n"
 "PO-Revision-Date: 2024-07-18 20:04+0330\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fa\n"
@@ -19,24 +19,40 @@ msgstr ""
 "Generated-By: Babel 2.9.1\n"
 
 #: bot/commands/admin.py:11
-msgid "export users to csv"
-msgstr "استخراج کاربران به فایل csv"
+msgid "Send broadcast message."
+msgstr "ارسال پیام همگانی"
 
 #: bot/commands/admin.py:12
-msgid "manage unresolved receipts"
-msgstr "مدیریت رسیدهای بررسی نشده"
+msgid "Send private message."
+msgstr "ارسال پیام خصوصی"
 
 #: bot/commands/admin.py:13
-msgid "manage admins"
-msgstr "مدیریت ادمین‌ها"
+msgid "Manage cards."
+msgstr "مدیریت کارت‌ها"
 
 #: bot/commands/admin.py:14
-msgid "manage servers"
-msgstr "مدیریت سرورها"
+msgid "Add cards."
+msgstr "اضافه کردن کارت."
 
 #: bot/commands/admin.py:15
-msgid "manage products"
+msgid "Manage unresolved receipts"
+msgstr "مدیریت رسیدهای بررسی نشده"
+
+#: bot/commands/admin.py:16
+msgid "Manage admins"
+msgstr "مدیریت ادمین‌ها"
+
+#: bot/commands/admin.py:17
+msgid "Manage servers"
+msgstr "مدیریت سرورها"
+
+#: bot/commands/admin.py:18
+msgid "Manage products"
 msgstr "مدیریت محصولات"
+
+#: bot/commands/admin.py:19
+msgid "Export users to csv"
+msgstr "استخراج کاربران به فایل csv"
 
 #: bot/commands/default.py:8
 msgid "start bot"
@@ -77,7 +93,7 @@ msgstr "لطفا محصول مورد نظر را انتخاب فرمایید."
 #: bot/handlers/users/buy_service.py:25 bot/handlers/users/buy_service.py:38
 #: bot/handlers/users/buy_service.py:56
 #: bot/handlers/users/increase_balance.py:23
-#: bot/handlers/users/increase_balance.py:63
+#: bot/handlers/users/increase_balance.py:74
 #: bot/handlers/users/manage_admins.py:23
 #: bot/handlers/users/manage_admins.py:44
 #: bot/handlers/users/manage_prodcuts.py:25
@@ -101,9 +117,9 @@ msgstr "لطفا محصول مورد نظر را انتخاب فرمایید."
 #: bot/handlers/users/manage_servers.py:168
 #: bot/handlers/users/manage_servers.py:194
 #: bot/handlers/users/manage_servers.py:220
-#: bot/handlers/users/manage_servers.py:246
-#: bot/handlers/users/my_services.py:49 bot/handlers/users/my_services.py:76
-#: bot/handlers/users/my_services.py:87 bot/keyboards/default/default.py:32
+#: bot/handlers/users/manage_servers.py:246 bot/handlers/users/message.py:48
+#: bot/handlers/users/my_services.py:52 bot/handlers/users/my_services.py:89
+#: bot/handlers/users/my_services.py:103 bot/keyboards/default/default.py:32
 #: bot/keyboards/default/default.py:41 bot/keyboards/default/default.py:50
 #: bot/keyboards/default/default.py:59 bot/keyboards/default/default.py:67
 #: bot/keyboards/default/default.py:77 bot/keyboards/default/default.py:87
@@ -114,8 +130,8 @@ msgstr "بازگشت 🔙"
 #: bot/handlers/users/increase_balance.py:24
 #: bot/handlers/users/manage_admins.py:24
 #: bot/handlers/users/manage_prodcuts.py:26
-#: bot/handlers/users/manage_servers.py:27 bot/handlers/users/my_services.py:50
-#: bot/handlers/users/my_services.py:77 bot/handlers/users/my_services.py:88
+#: bot/handlers/users/manage_servers.py:27 bot/handlers/users/my_services.py:53
+#: bot/handlers/users/my_services.py:90 bot/handlers/users/my_services.py:104
 msgid "You have successfully returned to the main menu."
 msgstr "با موفقیت به منوی اصلی بازگشتید."
 
@@ -141,8 +157,8 @@ msgstr ""
 "قیمت: {price} تومان\n"
 "دکمه تایید ✅ را جهت نهایی‌سازی سفارش بزنید."
 
-#: bot/handlers/users/buy_service.py:62 bot/handlers/users/my_services.py:54
-#: bot/handlers/users/my_services.py:81 bot/handlers/users/my_services.py:92
+#: bot/handlers/users/buy_service.py:62 bot/handlers/users/my_services.py:57
+#: bot/handlers/users/my_services.py:94 bot/handlers/users/my_services.py:108
 #: bot/keyboards/default/default.py:58
 msgid "Confirm ✅"
 msgstr "تایید ✅"
@@ -165,17 +181,88 @@ msgstr ""
 "لینک اشتراک شما:\n"
 "{link}"
 
+#: bot/handlers/users/buy_service.py:84 bot/handlers/users/card.py:42
+#: bot/handlers/users/card.py:54 bot/handlers/users/increase_balance.py:43
+#: bot/handlers/users/increase_balance.py:68
+#: bot/handlers/users/manage_admins.py:60
+#: bot/handlers/users/manage_admins.py:72
+#: bot/handlers/users/manage_prodcuts.py:111
+#: bot/handlers/users/manage_prodcuts.py:122
+#: bot/handlers/users/manage_prodcuts.py:148
+#: bot/handlers/users/manage_prodcuts.py:176
+#: bot/handlers/users/manage_prodcuts.py:203
+#: bot/handlers/users/manage_prodcuts.py:230
+#: bot/handlers/users/manage_prodcuts.py:257
+#: bot/handlers/users/manage_receipts.py:48
+#: bot/handlers/users/manage_receipts.py:66
+#: bot/handlers/users/manage_servers.py:117
+#: bot/handlers/users/manage_servers.py:128
+#: bot/handlers/users/manage_servers.py:154
+#: bot/handlers/users/manage_servers.py:180
+#: bot/handlers/users/manage_servers.py:206
+#: bot/handlers/users/manage_servers.py:232
+#: bot/handlers/users/manage_servers.py:258
+#: bot/handlers/users/my_services.py:74 bot/handlers/users/my_services.py:122
+msgid "An error occurred."
+msgstr "خطایی رخ داد."
+
+#: bot/handlers/users/card.py:13
+msgid "No cards found."
+msgstr "کارتی یافت نشد."
+
+#: bot/handlers/users/card.py:16
+msgid ""
+"ID: {id}\n"
+"Number: {number}\n"
+"Status: {status}"
+msgstr ""
+"آیدی: {id}\n"
+"شماره: {number}\n"
+"وضعیت: {status}"
+
+#: bot/handlers/users/card.py:18 bot/handlers/users/card.py:39
+#: bot/handlers/users/card.py:51
+msgid "Active ✅"
+msgstr "فعال ✅"
+
+#: bot/handlers/users/card.py:19 bot/handlers/users/card.py:39
+#: bot/handlers/users/card.py:51
+msgid "Inactive ⛔"
+msgstr "غیرفعال ⛔"
+
+#: bot/handlers/users/card.py:28
+msgid "Card {card} added successfully."
+msgstr "کارت {card} با موفقیت اضافه شد."
+
+#: bot/handlers/users/card.py:30
+msgid ""
+"Failed to add card.\n"
+"Command usage:\n"
+"/add_card [card_number]"
+msgstr ""
+"خطا در اضافه کردن کارت.\n"
+"نحوه استفاده از دستور:\n"
+"/add_card [card_number]"
+
+#: bot/handlers/users/card.py:38
+msgid "Card disabled successfully."
+msgstr "کارت با موفقیت غیرفعال شد."
+
+#: bot/handlers/users/card.py:50
+msgid "Card activated successfully."
+msgstr "کارت با موفقیت فعال شد."
+
 #: bot/handlers/users/helpers.py:10
 msgid "Choose an action from the menu 👇"
 msgstr "عملیاتی را از منوی پایین انتخاب کنید 👇"
 
 #: bot/handlers/users/increase_balance.py:16
 #: bot/handlers/users/increase_balance.py:31
-#: bot/handlers/users/increase_balance.py:64
+#: bot/handlers/users/increase_balance.py:75
 msgid "Please enter the amount you want to increase"
 msgstr "لطفا مقداری که می‌خواهید به موجودی اضافه کنید را وارد نمایید"
 
-#: bot/handlers/users/increase_balance.py:34
+#: bot/handlers/users/increase_balance.py:35
 msgid ""
 "OK! Now send {amount} Tomans to below card number and send the receipt\n"
 "Touch the card number once to copy it!\n"
@@ -186,11 +273,11 @@ msgstr ""
 "یک بار بر روی شماره کارت بزنید تا کپی شود!\n"
 "<code>{card_number}</code> "
 
-#: bot/handlers/users/increase_balance.py:50
+#: bot/handlers/users/increase_balance.py:59
 msgid "You receipt is received. Wait for approval process."
 msgstr "رسید شما دریافت شد. منتظر تایید بمانید."
 
-#: bot/handlers/users/increase_balance.py:53
+#: bot/handlers/users/increase_balance.py:62
 msgid ""
 "Dear Admin !\n"
 "New receipt is arrived. Check your panel please."
@@ -198,7 +285,7 @@ msgstr ""
 "ادمین عزیز !\n"
 "رسید جدیدی دریافت شد. لطفا پنل خود را بررسی فرمایید."
 
-#: bot/handlers/users/increase_balance.py:67
+#: bot/handlers/users/increase_balance.py:78
 msgid "Please send the receipt image"
 msgstr "لطفا عکس رسید را ارسال فرمایید"
 
@@ -282,27 +369,6 @@ msgstr ""
 #: bot/handlers/users/manage_admins.py:57
 msgid "This user now have admin privileges."
 msgstr "این کاربر هم اکنون دسترسی ادمین دارد."
-
-#: bot/handlers/users/manage_admins.py:60
-#: bot/handlers/users/manage_admins.py:72
-#: bot/handlers/users/manage_prodcuts.py:111
-#: bot/handlers/users/manage_prodcuts.py:122
-#: bot/handlers/users/manage_prodcuts.py:148
-#: bot/handlers/users/manage_prodcuts.py:176
-#: bot/handlers/users/manage_prodcuts.py:203
-#: bot/handlers/users/manage_prodcuts.py:230
-#: bot/handlers/users/manage_prodcuts.py:257
-#: bot/handlers/users/manage_receipts.py:48
-#: bot/handlers/users/manage_receipts.py:66
-#: bot/handlers/users/manage_servers.py:117
-#: bot/handlers/users/manage_servers.py:128
-#: bot/handlers/users/manage_servers.py:154
-#: bot/handlers/users/manage_servers.py:180
-#: bot/handlers/users/manage_servers.py:206
-#: bot/handlers/users/manage_servers.py:232
-#: bot/handlers/users/manage_servers.py:258
-msgid "An error occurred."
-msgstr "خطایی رخ داد."
 
 #: bot/handlers/users/manage_admins.py:69
 msgid "Admin removed."
@@ -510,11 +576,79 @@ msgstr "خب! Users Path جدید را وارد کنید."
 msgid "OK! Send the new Admin UUID for this server."
 msgstr "خب! Admin UUID جدید سرور را وارد کنید."
 
+#: bot/handlers/users/message.py:19
+msgid ""
+"Broadcast message 📢:\n"
+"{msg}"
+msgstr ""
+"پیام همگانی 📢:\n"
+"{msg}"
+
+#: bot/handlers/users/message.py:20
+msgid "Broadcast message sent."
+msgstr "پیام همگانی ارسال شد"
+
+#: bot/handlers/users/message.py:22
+msgid ""
+"Broadcast message failed.\n"
+"Command usage:\n"
+"/broadcast [message]"
+msgstr ""
+"خطا در ارسال پیام همگانی.\n"
+"نحوه استفاده از دستور:\n"
+"/broadcast [message]"
+
+#: bot/handlers/users/message.py:29
+msgid ""
+"Message from Admin ({name}):\n"
+"{msg}"
+msgstr ""
+"پیامی از ادمین ({name}):\n"
+"{msg}"
+
+#: bot/handlers/users/message.py:31
+msgid "Private message sent to user {user_id}."
+msgstr "پیام خصوصی به {user_id} ارسال شد."
+
+#: bot/handlers/users/message.py:33
+msgid "User not found."
+msgstr "کاربر یافت نشد."
+
+#: bot/handlers/users/message.py:35
+msgid ""
+"Private message failed.\n"
+"Command usage:\n"
+"/private_message [numeric_id] [message]"
+msgstr ""
+"خطا در ارسال پیام خصوصی..\n"
+"نحوه استفاده از دستور:\n"
+"/private_message [numeric_id] [message]"
+
+#: bot/handlers/users/message.py:55
+msgid "Admin ({name})"
+msgstr "ادمین ({name})"
+
+#: bot/handlers/users/message.py:57
+msgid ""
+"Message from {sender}:\n"
+"{msg}"
+msgstr ""
+"پیامی از {sender}:\n"
+"{msg}"
+
+#: bot/handlers/users/message.py:59
+msgid "Message sent successfully."
+msgstr "پیام با موفقیت ارسال شد."
+
+#: bot/handlers/users/message.py:63
+msgid "Failed to send message to user {user_id}."
+msgstr "حطا در ارسال پیام به {user_id}."
+
 #: bot/handlers/users/my_services.py:24
 msgid "You have no servers."
 msgstr "شما سرویسی ندارید."
 
-#: bot/handlers/users/my_services.py:30
+#: bot/handlers/users/my_services.py:31
 msgid ""
 "Name: {name}\n"
 "Days remaining: {days}\n"
@@ -526,7 +660,7 @@ msgstr ""
 "مصرف(گیگابایت): {usage}\n"
 "محدودیت حجم: {limit}"
 
-#: bot/handlers/users/my_services.py:43
+#: bot/handlers/users/my_services.py:44
 msgid ""
 "By prolonging your remaining days and usage will be reset.\n"
 "Press Confirm✅ to finalize prolonging"
@@ -535,10 +669,14 @@ msgstr ""
 "دکمه تایید✅ را برای نهایی کردن تمدید بزنید"
 
 #: bot/handlers/users/my_services.py:61
+msgid "Your account balance is insufficient for service prolonging."
+msgstr "موجودی حساب شما برای تمدید سرویس کافی نیست."
+
+#: bot/handlers/users/my_services.py:69
 msgid "Service prolong success."
 msgstr "سرویس با موفقیت تمدید شد."
 
-#: bot/handlers/users/my_services.py:71
+#: bot/handlers/users/my_services.py:81
 msgid ""
 "By deleting a service you will lose all of your remaining days and "
 "traffic.\n"
@@ -548,7 +686,7 @@ msgstr ""
 "داد.\n"
 "دکمه تایید✅ را جهت نهایی کردن حذف بزنید"
 
-#: bot/handlers/users/my_services.py:82
+#: bot/handlers/users/my_services.py:95
 msgid ""
 "By deleting a service your paid balance will not be refunded.\n"
 "Press Confirm✅ to finalize deleting"
@@ -556,7 +694,7 @@ msgstr ""
 "با حذف سرویس مبلغ پرداختی شما عودت نخواهد شد.\n"
 "دکمه تایید✅ را جهت نهایی کردن حذف بزنید"
 
-#: bot/handlers/users/my_services.py:99
+#: bot/handlers/users/my_services.py:117
 msgid "Service deletion success."
 msgstr "سرویس با موفقیت حذف شد"
 
@@ -628,6 +766,18 @@ msgstr "مدیریت محصولات 🛍️"
 msgid "Remove 🗑️"
 msgstr "حذف 🗑️"
 
+#: bot/keyboards/inline/card.py:9
+msgid "Disable ⛔"
+msgstr "غیرفعال کردن ⛔"
+
+#: bot/keyboards/inline/card.py:9
+msgid "Activate ✅"
+msgstr "فعال کردن ✅"
+
+#: bot/keyboards/inline/message.py:9
+msgid "Reply 💬"
+msgstr "پاسخ 💬"
+
 #: bot/keyboards/inline/product.py:9 bot/keyboards/inline/server.py:9
 msgid "Edit Name ✏️"
 msgstr "ویرایش نام ✏️"
@@ -684,11 +834,4 @@ msgstr "تمدید 🕐"
 #: bot/middlewares/throttling.py:35
 msgid "Too many requests!"
 msgstr "تعداد درخواست بیش از حد!"
-
-#~ msgid ""
-#~ "By deleting a service you will "
-#~ "lose all of your remaingin days "
-#~ "and traffic.\n"
-#~ "Press Confirm✅ to finalize deleting"
-#~ msgstr ""
 
