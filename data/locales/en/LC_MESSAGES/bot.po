@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bot VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-22 23:31+0330\n"
+"POT-Creation-Date: 2024-07-22 23:47+0330\n"
 "PO-Revision-Date: 2022-04-02 14:16+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -443,6 +443,12 @@ msgstr ""
 msgid "Receipt approved."
 msgstr ""
 
+#: bot/handlers/users/manage_receipts.py:45
+msgid ""
+"{msg}\n"
+"Approved ✅"
+msgstr ""
+
 #: bot/handlers/users/manage_receipts.py:47
 #: bot/handlers/users/manage_receipts.py:65
 msgid "Receipt not found."
@@ -454,6 +460,12 @@ msgstr ""
 
 #: bot/handlers/users/manage_receipts.py:62
 msgid "Receipt rejected."
+msgstr ""
+
+#: bot/handlers/users/manage_receipts.py:63
+msgid ""
+"{msg}\n"
+"Rejected ❌"
 msgstr ""
 
 #: bot/handlers/users/manage_servers.py:31 bot/keyboards/default/default.py:40

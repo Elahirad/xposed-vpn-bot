@@ -42,7 +42,7 @@ async def approve_receipt(callback_query: types.CallbackQuery, regexp: Regexp):
 
         await bot.send_message(chat_id=receipt.user.id, text=_('Your receipt has been approved!'))
         await callback_query.answer(_("Receipt approved."))
-        await callback_query.message.edit_reply_markup(reply_markup=None)  # Remove the inline buttons
+        await callback_query.message.edit_caption(_("{msg}\nApproved ✅").format(msg=callback_query.message.caption))
     except DoesNotExist:
         await callback_query.answer(_("Receipt not found."))
     except Exception as e:
@@ -60,7 +60,7 @@ async def reject_receipt(callback_query: types.CallbackQuery, regexp: Regexp):
         receipt.save()
         await bot.send_message(chat_id=receipt.user.id, text=_('Your receipt has been rejected!'))
         await callback_query.answer(_("Receipt rejected."))
-        await callback_query.message.edit_reply_markup(reply_markup=None)  # Remove the inline buttons
+        await callback_query.message.edit_caption(_("{msg}\nRejected ❌").format(msg=callback_query.message.caption))
     except DoesNotExist:
         await callback_query.answer(_("Receipt not found."))
     except Exception as e:
