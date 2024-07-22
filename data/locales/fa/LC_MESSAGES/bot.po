@@ -475,7 +475,8 @@ msgid ""
 "Card: {card}"
 msgstr ""
 "کاربر: @{user}\n"
-"مقدار: {amount} تومانکارت: {card}"
+"مقدار: {amount} تومان\n"
+"کارت: {card}"
 
 #: bot/handlers/users/manage_receipts.py:43
 msgid "Your receipt has been approved!"
