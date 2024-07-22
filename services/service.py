@@ -32,6 +32,13 @@ def get_user_services(user_id: int) -> list:
                                    service.server.admin_uuid
                                    )
         hid_service = hiddify.get_service(service.uuid)
-        hid_service['raw_id'] = service.id
-        services.append(hid_service)
+        if hid_service:
+            hid_service['raw_id'] = service.id
+            services.append(hid_service)
+        else:
+            Service.delete().where(Service.id == service.id).execute()
     return services
+
+
+def is_test_service(uuid: str) -> bool:
+    return Service.get_or_none(Service.uuid == uuid).is_test_service

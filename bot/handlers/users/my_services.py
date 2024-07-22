@@ -11,7 +11,7 @@ from bot.states import UserStates
 from loader import dp, _, bot
 from models import User
 from services.hiddify import HiddifyInterface
-from services.service import get_user_services, get_service, remove_service
+from services.service import get_user_services, get_service, remove_service, is_test_service
 from services.users import decrease_balance
 
 
@@ -20,13 +20,22 @@ from services.users import decrease_balance
 async def _my_services(message: Message, user: User):
     services = get_user_services(user.id)
 
-    if not len(services):
+    actual_services = 0
+
+    for service in services:
+        print(service)
+        if not is_test_service(service['uuid']):
+            actual_services += 1
+
+    if not actual_services:
         await message.answer(_('You have no servers.'))
         return
 
     for service in services:
+        if is_test_service(service['uuid']):
+            continue
         remaining_days = service['package_days'] - (
-                    datetime.datetime.now() - datetime.datetime.strptime(service['start_date'], "%Y-%m-%d")).days
+                datetime.datetime.now() - datetime.datetime.strptime(service['start_date'], "%Y-%m-%d")).days
 
         text = _('Name: {name}\nDays remaining: {days}\nUsage(GB): {usage}\nLimit: {limit}') \
             .format(name=service['name'],

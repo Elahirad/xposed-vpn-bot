@@ -39,7 +39,8 @@ class HiddifyInterface:
 
     def get_service(self, uuid: str):
         response = requests.get(self._complete_url + f'/api/v2/admin/user/{uuid}/', headers=self._headers)
-        return json.loads(response.text)
+
+        return json.loads(response.text) if response.status_code != 404 else None
 
     def get_services(self):
         response = requests.get(self._complete_url + '/api/v2/admin/user/', headers=self._headers)
