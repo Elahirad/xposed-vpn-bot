@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bot VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-23 00:38+0330\n"
+"POT-Creation-Date: 2024-07-23 00:48+0330\n"
 "PO-Revision-Date: 2024-07-18 20:04+0330\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fa\n"
@@ -94,30 +94,8 @@ msgstr "کاربران فعال: {count}"
 msgid "Choose the server for the test service."
 msgstr "سرور سرویس تست را انتخاب کنید."
 
-#: bot/handlers/users/buy_service.py:32
-msgid ""
-"Server created successfully.\n"
-"Subscription link:\n"
-"{link}"
-msgstr ""
-"سرویس با موفقیت ساخته شد\n"
-"لینک اشتراک شما:\n"
-"{link}"
-
-#: bot/handlers/users/buy_service.py:35
-msgid "You can only create a test server once a week."
-msgstr "شما فقط در یک بار در هفته می‌توانید سرویس تست دریافت کنید."
-
-#: bot/handlers/users/buy_service.py:38
-msgid "Test server creation failed."
-msgstr "خطا در ساخت سرویس تست."
-
-#: bot/handlers/users/buy_service.py:44 bot/handlers/users/buy_service.py:65
-msgid "Please select the product you want."
-msgstr "لطفا محصول مورد نظر را انتخاب فرمایید."
-
-#: bot/handlers/users/buy_service.py:51 bot/handlers/users/buy_service.py:64
-#: bot/handlers/users/buy_service.py:82
+#: bot/handlers/users/buy_service.py:26 bot/handlers/users/buy_service.py:56
+#: bot/handlers/users/buy_service.py:69 bot/handlers/users/buy_service.py:88
 #: bot/handlers/users/increase_balance.py:23
 #: bot/handlers/users/increase_balance.py:74
 #: bot/handlers/users/manage_admins.py:23
@@ -152,7 +130,7 @@ msgstr "لطفا محصول مورد نظر را انتخاب فرمایید."
 msgid "Back 🔙"
 msgstr "بازگشت 🔙"
 
-#: bot/handlers/users/buy_service.py:52
+#: bot/handlers/users/buy_service.py:27 bot/handlers/users/buy_service.py:57
 #: bot/handlers/users/increase_balance.py:24
 #: bot/handlers/users/manage_admins.py:24
 #: bot/handlers/users/manage_prodcuts.py:26
@@ -161,17 +139,40 @@ msgstr "بازگشت 🔙"
 msgid "You have successfully returned to the main menu."
 msgstr "با موفقیت به منوی اصلی بازگشتید."
 
-#: bot/handlers/users/buy_service.py:58 bot/handlers/users/buy_service.py:83
+#: bot/handlers/users/buy_service.py:37
+msgid ""
+"Server created successfully.\n"
+"Subscription link:\n"
+"{link}"
+msgstr ""
+"سرویس با موفقیت ساخته شد\n"
+"لینک اشتراک شما:\n"
+"{link}"
+
+#: bot/handlers/users/buy_service.py:40
+msgid "You can only create a test server once a week."
+msgstr "شما فقط در یک بار در هفته می‌توانید سرویس تست دریافت کنید."
+
+#: bot/handlers/users/buy_service.py:43
+msgid "Test server creation failed."
+msgstr "خطا در ساخت سرویس تست."
+
+#: bot/handlers/users/buy_service.py:49 bot/handlers/users/buy_service.py:70
+msgid "Please select the product you want."
+msgstr "لطفا محصول مورد نظر را انتخاب فرمایید."
+
+#: bot/handlers/users/buy_service.py:63 bot/handlers/users/buy_service.py:89
 msgid "OK! Now please choose a name for your service."
 msgstr "خب! حالا یک نام برای سرویس خود انتخاب کنید."
 
-#: bot/handlers/users/buy_service.py:73
+#: bot/handlers/users/buy_service.py:78
 msgid ""
 "OK! {product_name} Selected.\n"
 "Here is details of the product:\n"
 "Name: {name}\n"
 "Days: {days}\n"
 "Limit(GB): {limit}\n"
+"Server: {server}\n"
 "Price: {price}\n"
 "Press Confirm ✅ Button to finalize the order."
 msgstr ""
@@ -180,16 +181,17 @@ msgstr ""
 "نام: {name}\n"
 "تعداد روز: {days}\n"
 "حجم (گیگابایت): {limit}\n"
+"سرور: {server}\n"
 "قیمت: {price} تومان\n"
 "دکمه تایید ✅ را جهت نهایی‌سازی سفارش بزنید."
 
-#: bot/handlers/users/buy_service.py:88 bot/handlers/users/my_services.py:57
+#: bot/handlers/users/buy_service.py:94 bot/handlers/users/my_services.py:57
 #: bot/handlers/users/my_services.py:94 bot/handlers/users/my_services.py:108
 #: bot/keyboards/default/default.py:57
 msgid "Confirm ✅"
 msgstr "تایید ✅"
 
-#: bot/handlers/users/buy_service.py:95
+#: bot/handlers/users/buy_service.py:101
 msgid ""
 "Dear user. Your balance is insufficient for purchasing this service.\n"
 "Please charge your account and try again"
@@ -197,7 +199,7 @@ msgstr ""
 "کاربر عزیز. موجودی حساب شما برای خریداری این سرویس کافی نیست.\n"
 "لطفا حساب خود را شارژ نموده و مجددا تلاش فرمایید"
 
-#: bot/handlers/users/buy_service.py:105
+#: bot/handlers/users/buy_service.py:111
 msgid ""
 "Purchased successfully!\n"
 "Your subscription link is:\n"
@@ -207,7 +209,7 @@ msgstr ""
 "لینک اشتراک شما:\n"
 "{link}"
 
-#: bot/handlers/users/buy_service.py:110 bot/handlers/users/card.py:42
+#: bot/handlers/users/buy_service.py:116 bot/handlers/users/card.py:42
 #: bot/handlers/users/card.py:54 bot/handlers/users/increase_balance.py:43
 #: bot/handlers/users/increase_balance.py:68
 #: bot/handlers/users/manage_admins.py:60

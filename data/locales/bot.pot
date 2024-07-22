@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bot VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-23 00:38+0330\n"
+"POT-Creation-Date: 2024-07-23 00:48+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,27 +93,8 @@ msgstr ""
 msgid "Choose the server for the test service."
 msgstr ""
 
-#: bot/handlers/users/buy_service.py:32
-msgid ""
-"Server created successfully.\n"
-"Subscription link:\n"
-"{link}"
-msgstr ""
-
-#: bot/handlers/users/buy_service.py:35
-msgid "You can only create a test server once a week."
-msgstr ""
-
-#: bot/handlers/users/buy_service.py:38
-msgid "Test server creation failed."
-msgstr ""
-
-#: bot/handlers/users/buy_service.py:44 bot/handlers/users/buy_service.py:65
-msgid "Please select the product you want."
-msgstr ""
-
-#: bot/handlers/users/buy_service.py:51 bot/handlers/users/buy_service.py:64
-#: bot/handlers/users/buy_service.py:82
+#: bot/handlers/users/buy_service.py:26 bot/handlers/users/buy_service.py:56
+#: bot/handlers/users/buy_service.py:69 bot/handlers/users/buy_service.py:88
 #: bot/handlers/users/increase_balance.py:23
 #: bot/handlers/users/increase_balance.py:74
 #: bot/handlers/users/manage_admins.py:23
@@ -148,7 +129,7 @@ msgstr ""
 msgid "Back 🔙"
 msgstr ""
 
-#: bot/handlers/users/buy_service.py:52
+#: bot/handlers/users/buy_service.py:27 bot/handlers/users/buy_service.py:57
 #: bot/handlers/users/increase_balance.py:24
 #: bot/handlers/users/manage_admins.py:24
 #: bot/handlers/users/manage_prodcuts.py:26
@@ -157,41 +138,61 @@ msgstr ""
 msgid "You have successfully returned to the main menu."
 msgstr ""
 
-#: bot/handlers/users/buy_service.py:58 bot/handlers/users/buy_service.py:83
+#: bot/handlers/users/buy_service.py:37
+msgid ""
+"Server created successfully.\n"
+"Subscription link:\n"
+"{link}"
+msgstr ""
+
+#: bot/handlers/users/buy_service.py:40
+msgid "You can only create a test server once a week."
+msgstr ""
+
+#: bot/handlers/users/buy_service.py:43
+msgid "Test server creation failed."
+msgstr ""
+
+#: bot/handlers/users/buy_service.py:49 bot/handlers/users/buy_service.py:70
+msgid "Please select the product you want."
+msgstr ""
+
+#: bot/handlers/users/buy_service.py:63 bot/handlers/users/buy_service.py:89
 msgid "OK! Now please choose a name for your service."
 msgstr ""
 
-#: bot/handlers/users/buy_service.py:73
+#: bot/handlers/users/buy_service.py:78
 msgid ""
 "OK! {product_name} Selected.\n"
 "Here is details of the product:\n"
 "Name: {name}\n"
 "Days: {days}\n"
 "Limit(GB): {limit}\n"
+"Server: {server}\n"
 "Price: {price}\n"
 "Press Confirm ✅ Button to finalize the order."
 msgstr ""
 
-#: bot/handlers/users/buy_service.py:88 bot/handlers/users/my_services.py:57
+#: bot/handlers/users/buy_service.py:94 bot/handlers/users/my_services.py:57
 #: bot/handlers/users/my_services.py:94 bot/handlers/users/my_services.py:108
 #: bot/keyboards/default/default.py:57
 msgid "Confirm ✅"
 msgstr ""
 
-#: bot/handlers/users/buy_service.py:95
+#: bot/handlers/users/buy_service.py:101
 msgid ""
 "Dear user. Your balance is insufficient for purchasing this service.\n"
 "Please charge your account and try again"
 msgstr ""
 
-#: bot/handlers/users/buy_service.py:105
+#: bot/handlers/users/buy_service.py:111
 msgid ""
 "Purchased successfully!\n"
 "Your subscription link is:\n"
 "{link}"
 msgstr ""
 
-#: bot/handlers/users/buy_service.py:110 bot/handlers/users/card.py:42
+#: bot/handlers/users/buy_service.py:116 bot/handlers/users/card.py:42
 #: bot/handlers/users/card.py:54 bot/handlers/users/increase_balance.py:43
 #: bot/handlers/users/increase_balance.py:68
 #: bot/handlers/users/manage_admins.py:60

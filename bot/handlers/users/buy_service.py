@@ -23,6 +23,11 @@ async def _test_service(message: Message):
 
 @dp.message_handler(state=UserStates.test_service)
 async def _test_service_handle(message: Message, user: User):
+    if message.text == _('Back 🔙'):
+        await message.answer(_('You have successfully returned to the main menu.'),
+                             reply_markup=get_default_markup(user))
+        await UserStates.main_page.set()
+        return
     try:
         server = get_server(message.text)
         if is_user_eligible_for_test_service(user.id, server.id):
@@ -70,8 +75,9 @@ async def _get_name(message: Message, user: User, state: FSMContext):
     product = find_product(state_data['product'])
     await state.update_data(name=message.text)
     await message.answer(
-        _('OK! {product_name} Selected.\nHere is details of the product:\nName: {name}\nDays: {days}\nLimit(GB): {limit}\nPrice: {price}\nPress Confirm ✅ Button to finalize the order.').format(
-            product_name=product.name, name=message.text, days=product.days, limit=product.gb_limit,
+        _('OK! {product_name} Selected.\nHere is details of the product:\nName: {name}\nDays: {days}\nLimit(GB): {limit}\nServer: {server}\nPrice: {price}\nPress Confirm ✅ Button to finalize the order.').format(
+            product_name=product.name, name=message.text, days=product.days, server=product.server.name,
+            limit=product.gb_limit,
             price=product.price),
         reply_markup=get_order_confirm_markup())
     await UserStates.BuyService.confirm.set()
