@@ -1,9 +1,10 @@
+import datetime
 from typing import Optional
 
 from peewee import fn
 
 from data.config import ADMINS
-from models import User
+from models import User, Service
 from utils.misc.logging import logger
 
 
@@ -97,3 +98,18 @@ def make_admin(user: User) -> None:
 def remove_admin(user: User) -> None:
     user.is_admin = False
     user.save()
+
+
+def is_user_eligible_for_test_service(user_id: int, server_id: int) -> bool:
+    query = (Service.select(Service).where(
+        (Service.user == user_id) & (Service.server == server_id) & (Service.is_test_service == True)).order_by(
+        Service.id.desc()))
+
+    services = list(query)
+
+    if not len(services):
+        return True
+
+    if datetime.datetime.now() - services[0].created_at < datetime.timedelta(days=7):
+        return False
+    return True

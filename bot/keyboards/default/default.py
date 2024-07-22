@@ -8,16 +8,15 @@ from services.servers import get_servers
 def get_default_markup(user):
     markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=5)
 
-    markup.add(_('Help 🆘'), _('Settings 🛠'))
+    markup.add(_('Get a Test Service 🧪'))
     markup.add(_('My Information ℹ️'), _('Increase Balance💵'))
     markup.add(_('Buy a Service 🛒'), _('My Services 📜'))
+    markup.add(_('Help 🆘'), _('Settings 🛠'))
 
     if user.is_admin:
-        markup.add(_('Export users 📁'))
-        markup.add(_('Manage receipts 🧾'))
+        markup.add(_('Export users 📁'), _('Manage receipts 🧾'))
+        markup.add(_('Manage Servers 🖥️'), _('Manage Products 🛍️'))
         markup.add(_('Manage Admins ⚙️'))
-        markup.add(_('Manage Servers 🖥️'))
-        markup.add(_('Manage Products 🛍️'))
 
     if len(markup.keyboard) < 1:
         return ReplyKeyboardRemove()

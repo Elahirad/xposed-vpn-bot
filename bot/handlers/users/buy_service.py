@@ -1,15 +1,41 @@
 from aiogram.dispatcher import FSMContext
 from aiogram.types import Message
 
-from bot.keyboards.default import get_default_markup, get_products_markup, get_order_confirm_markup, get_back_markup
+from bot.keyboards.default import get_default_markup, get_products_markup, get_order_confirm_markup, get_back_markup, \
+    get_servers_markup
 from bot.states import UserStates
 from loader import dp, _
 from models import Product
 from models import User
 from services.hiddify import HiddifyInterface
 from services.products import find_product
+from services.servers import get_server
 from services.service import add_service
-from services.users import decrease_balance
+from services.users import decrease_balance, is_user_eligible_for_test_service
+
+
+@dp.message_handler(i18n_text='Get a Test Service 🧪', state=UserStates.main_page)
+@dp.message_handler(commands=['test_service'], state='*')
+async def _test_service(message: Message):
+    await message.answer(_('Choose the server for the test service.'), reply_markup=get_servers_markup())
+    await UserStates.test_service.set()
+
+
+@dp.message_handler(state=UserStates.test_service)
+async def _test_service_handle(message: Message, user: User):
+    try:
+        server = get_server(message.text)
+        if is_user_eligible_for_test_service(user.id, server.id):
+            hiddify = HiddifyInterface(server.url, server.proxy_path, server.users_path, server.admin_uuid)
+            service = hiddify.create_service(f"{user.username if user.username else user.id}_test", 2, 1)
+            add_service(service['uuid'], user.id, server.id, -1, True)
+            await message.answer(_('Server created successfully.\nSubscription link:\n{link}').format(
+                link=hiddify.get_sub_link(service['uuid'])))
+        else:
+            await message.answer(_('You can only create a test server once a week.'))
+    except Exception as e:
+        print(e)
+        await message.answer(_('Test server creation failed.'))
 
 
 @dp.message_handler(i18n_text='Buy a Service 🛒', state=UserStates.main_page)
@@ -74,7 +100,7 @@ async def _get_confirmation(message: Message, state: FSMContext, user: User):
             hiddify = HiddifyInterface(product.server.url, product.server.proxy_path,
                                        product.server.users_path, product.server.admin_uuid)
             service = hiddify.create_service(name, product.days, product.gb_limit)
-            add_service(service['uuid'], user.id, product.server.id, product.id)
+            add_service(service['uuid'], user.id, product.server.id, product.id, False)
             decrease_balance(user.id, product.price)
             await message.answer(_('Purchased successfully!\nYour subscription link is:\n{link}').format(
                 link=hiddify.get_sub_link(service['uuid'])), reply_markup=get_default_markup(user))

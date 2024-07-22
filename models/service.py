@@ -15,7 +15,7 @@ class Service(BaseModel):
 
     uuid = CharField(default='')
 
-    product = ForeignKeyField(Product, backref='services', on_delete='RESTRICT')
+    product = ForeignKeyField(Product, backref='services', on_delete='RESTRICT', null=True)
 
     server = ForeignKeyField(Server, backref='services', on_delete='RESTRICT')
 

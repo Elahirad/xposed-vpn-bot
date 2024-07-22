@@ -6,6 +6,8 @@ class UserStates(StatesGroup):
 
     message_reply = State()
 
+    test_service = State()
+
     class IncreaseBalance(StatesGroup):
         get_amount = State()
         get_receipt = State()

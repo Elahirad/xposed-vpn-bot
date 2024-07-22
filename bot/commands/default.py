@@ -5,12 +5,13 @@ from loader import _, bot, i18n
 
 def get_default_commands(lang: str = 'en') -> list[BotCommand]:
     commands = [
-        BotCommand('/start', _('start bot', locale=lang)),
-        BotCommand('/help', _('how it works?', locale=lang)),
-        BotCommand('/lang', _('change language', locale=lang)),
-        BotCommand('/settings', _('open bot settings', locale=lang)),
-        BotCommand('/user_info', _('show user info', locale=lang)),
-        BotCommand('/increase_balance', _('increase balance', locale=lang)),
+        BotCommand('/start', _('Start bot', locale=lang)),
+        BotCommand('/test_service', _('Get a test service', locale=lang)),
+        BotCommand('/increase_balance', _('Increase balance', locale=lang)),
+        BotCommand('/user_info', _('Show user info', locale=lang)),
+        BotCommand('/settings', _('Open bot settings', locale=lang)),
+        BotCommand('/lang', _('Change language', locale=lang)),
+        BotCommand('/help', _('How it works?', locale=lang)),
     ]
 
     return commands
